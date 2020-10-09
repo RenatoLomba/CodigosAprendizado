@@ -1,0 +1,236 @@
+CSS
+
+estilo.css --> Arquivo CSS externo
+color: "blue"; --> Define uma cor ao texto
+padding: "10px"; --> Espaçamento de 10 pixels
+margin: "10px"; --> Margem de 10 pixels
+margin: "10px" auto; --> Centraliza o texto
+border: 1px (expessura) solid (tipo sólida) red (cor vermelha); --> Defino uma borda ao elemento
+	Tipos de borda:
+	-solid
+	-dotted
+	-dashed
+	-double
+	-grove
+	-ridge
+	-inset
+	-outset
+	-none
+	-hidden
+/* comentário */
+border-color: "red"; --> Cor da borda
+border-width: "15px"; --> Largura da borda
+border-style: "solid"; --> Tipo da borda
+border-radius: "10px"; --> Define um arredondamento na borda do elemento
+border-radius: "10px" "50px" "80px" "100px"; --> Arredondamento (superior esquerdo, superior direito, inferior direito, inferior direito)
+    -webkit-border-radius:; --> Suporte para Chrome antigo
+    -moz-border-radius:; --> Suporte para Firefox antigo
+box-sizing: border-box; --> Propriedade que faz com que o padding não influencia no tamanho total da caixa
+    -webkit-border-sizing:;
+    -moz-border-sizing:;
+Tamanhos:
+	px --> Pixel (Fixo)
+	% --> Por cento (Relativo ao tamanho da página)
+	em --> Relativo ao tamanho do container pai
+font-size: "30px"; --> Define o tamanho da fonte para 30 pixels
+font-family: "Times New Roman", Times, serif; --> Define a família da fonte (tipo)
+font-weight: bold; --> Texto em negrito
+font-weight: 100-900; --> Nível do negrito
+font-style: italic; --> Texto em itálico
+text-decoration: underline; --> Underline
+text-decoration: overline; --> Overline
+text-decoration: line-through; --> Linha no meio
+text-shadow: "20px" "20px" black; --> Sombra (posição x, posição y, cor hexadecimal ou rgba)
+text-shadow: "20px" "20px" "20px" rgb(); --> Sombra com borrão (posição x, posição y, nível de borrão, cor rgb ou hexadecimal)
+text-transform: uppercase; --> Faz com que todo o texto fique com letra maiuscula
+text-transform: lowercase; --> Faz com que todo o texto fique com letra minuscula
+box-shadow: 20px 20px 20px rgb(); --> Aplica uma sombra na caixa, da mesma forma do text-shadow
+box-shadow: 20px 20px 20px 20px black; --> posição x, posição y, nível de sombra, espalhamento da sombra, cor
+font: "bold" "40px" "família";
+background-color: blue; --> Cor de fundo
+background-image: url('imagens/imagem.png'); --> Define uma imagem como plano de fundo
+background-repeat: no-repeat; --> Sem repetição da imagem
+background-attachment: fixed; --> Imagem fixa na tela
+background-position: "center"; --> Posção da imagem na tela (Centro)
+background-position: "left" "center"; --> (alinhamento horizontal x) (alinhamento vertical y)
+background: blue url();
+background: rgb(); --> Utiliza cores rgb
+background: rgba(255, 255, 255, 0) --> Define uma transparencia para esta cor (Ultimo valor: 0 -não aparece/1 -aparece inteira/0.5 -semitransparente)
+background: linear-gradient(*); --> Utilizar um degradê
+    *red, yellow --> Vermelho para amarelo
+    *to right, red, yellow --> Esquerda para a direita
+    *to left, red, yellow --> Direita pra esquerda
+    *to bottom, red, yellow --> De cima para baixo
+    *to top, red, yellow --> De baixo para cima
+    *80deg, red, yellow --> Grau de rotação das cores
+    *90deg, red, yellow, green --> Degradê com 3 cores
+background: radial-gradient(*); --> Degradê do centro pra fora
+    *red, yellow --> Vermelho para amarelo
+float: "left"/"right"/"none"; --> Flutua um objeto na tela na posição escolhida
+clear: "left"/"right"/"both"; --> Limpa o conteúdo flutuante para que o container se ajuste a ele (necessário utilizar o "clear: both" fora de um container que estiver utilizando elementos flutuantes, como por exemplo o "float: left")
+display: "inline"; --> Elemento se transforma em inline (span/a/img)
+display: "block"; --> Elemento se transforma em block (div/p/table)
+display: "none"; --> Elemento some da tela
+display: "flex"; --> Utilizado para criação de Flexbox
+    flex-direction: "row"; --> Formatação dos itens dentro da Flexbox (Flexitems)
+        row; --> Padrão (lado esquerdo)
+        row-reverse; --> Padrão reverso (lado direito)
+        column;
+        column-reverse;
+    flex-wrap: "nowrap"; --> Configura a quebra dos Flexitems de acordo com o tamanho da flexbox
+        nowrap; --> Sem quebra, os itens serão apertados para caber na caixa, mudando seus tamanhos originais
+        wrap; --> Os itens são distribuidos dentro da caixa, não mudando seu tamanho original
+        wrap-reverse; --> Distribui os itens de maneira contrária
+    justify-content: "flex-start"; --> Justifica os flexitems dentro da flexbox
+        flex-start; --> Posiciona os itens a esquerda da flexbox
+        flex-end; --> Posiciona os itens a direita da flexbox
+        center; --> Posiciona os itens no centro (x)
+        space-betwen; --> Adiciona um espaçamento entre os itens
+        space-around; --> adiciona um espaçamento nos arredores dos itens
+    align-items: "stretch"; --> Alinha os itens verticalmente na caixa
+        stretch; --> Estica os itens do topo até a base da caixa
+        center; --> Posiciona os itens no centro (y)
+        flex-start; --> Posiciona os itens na parte superior da caixa
+        flex-end; --> Posiciona os itens na parte inferior da caixa
+        baseline; --> Alinha o item de acordo com seu texto base
+    order: "1" --> Define a ordem em que os flexitems irão aparecer, 1 sendo o primeiro e assim por diante
+    flex-grow: "0"; --> Define o crescimento de um flexitem, fazendo com que ele expanda até o máximo que puder na tela (quanto maior o valor, maior espaço o item vai ocupar em relação aos outros)
+    flex-shrink: "1"; --> Define o encolhimento de um flexitem, fazendo com que ele diminua até o máximo que puder na tela (quanto maior o valor, menos espço o item vai ocupar em relação aos outros) 
+    flex-basis: "auto"; --> Define um tamanho base de um flexitem, podendo ser utilizado em conjunto com as outras propriedades flex
+        auto; --> Automático
+        200px; --> Valor base de 200px e etc
+position: "static"; --> Posição estática
+position: "relative"; --> Posição relativa (caixa pode ser movimentada)
+	top/left/bottom/right: "10px"; --> Alinha a posição baseado na sua posição inicial
+position: "absolute"; --> Posição absoluta, semelhante a posição relative (calculada em relação ao conteiner, caso o conteiner tenha uma posição diferente de static)
+position: "fixed"; --> Posição fixa (mesmo usando a barra de rolagem, o elemento continua na tela)
+z-index: 1; --> Ordem de posicionamento do elemento
+z-index: 2; --> Sobrepõe os elementos com valor 1 e vice-versa
+a:link {} --> Link não visitado
+a:visited {} --> Link visitado
+a:hover {} --> Link quando passado o cursor por cima
+a:active {} --> Link quando clicado
+a:link, a:visited {} --> Formatar 2 links ao mesmo tempo
+#caixa:hover {} --> Formata o ID quando estiver com o cursor em cima
+.caixa:visited {} --> Formata a Classe quando ja tiver sido visitada
+p {
+	color red !important; --> Atributo mais importante
+}
+* {} --> Universal -4
+h2 {} --> Mais especifico -3
+h2.verde {} --> Muito mais especifico -2
+h2#amarelo {} --> Ainda mais especifico -1
+list-style-type: none; --> Define o estilo da lista como nenhuma
+@keyframes "nome da animação" { --> Crio uma animação em CSS
+    from { --> DE (Estado inicial)
+        background: red;
+    }
+    to { --> PARA (Estado final)
+        background: blue;
+    }
+}
+    @-webkit-keyframes
+    @-moz-keyframes
+    @-o-keyframes
+animation-name: "nome da animação"; --> Utilizo a animação em uma formatação
+animation-duration: 5s; --> Tempo de duração da animação em segundos
+animation-delay: 3s; --> Tempo até a animação começar
+animation-iteration-count: 2; --> Quantas vezes a animação será realizada
+animation-direction: alternate; --> Exibe a animação alternada
+animation-direction: reversa; --> Exibe a animação inversamente (to-from)
+animation: animacao 5s 3s 2 alternate; --> (nome da animacao, duração, delay, direção)
+    -webkit-animation
+    -moz-animation
+    -o-animation
+transition: width 3s, background 3s; --> Define uma transição para o tamanho e a cor da caixa (propriedade, duração)
+transition: all 3s; --> Define uma transição para todas as propriedades do elemento CSS (all, duração)
+    -webkit-transition
+    -moz-transition
+    -o-transition
+Exemplo: 
+    #caixa {
+	    width: 300px;
+	    height: 300px;
+	    background: orange;
+    }
+    #caixa:hover {
+	    width: 400px;
+	    background: yellow;
+	    /*transition: width 0.5s, background 0.5s;*/
+	    transition: all 0.5s;
+    }
+transform: rotate(30deg) 	--> Rotacionamento de 30 graus
+transform: scaleX ou Y(-1) 	--> Espelha o elemento, na horizontal ou vertical
+overflow-x: hidden/visible 	--> Barra de rolagem horizontal escondida/visivel
+overflow-y: hidden/visible 	--> Barra de rolagem vertical escondida/visivel
+-webkit-overflow-scrolling: touch;		--> Define a barra de rolagem como touch para dispositivos móveis (mobile)
+-ms-overflow-style: -ms-autohiding-scrollbar;	--> Esconde a barra de rolagem em dispositivos microsoft (mobile)	
+letter-spacing: 1px;		--> Espaçamento entre letras de 1px
+line-height: 1.5;		--> Espaçamento entre as linhas do paragrafo
+mix-blend-mode: screen;		--> Mistura as cores de um item que está por cima do outro
+.estilo > div:first-child	--> Seletor apenas o primeiro filho (primeira div dentro da classe estilo)
+.container::after {}		--> Seletor do conteúdo após aquela classe ou elemento html especificado
+.container::after { content: 'Novo texto' }	--> Cria um novo conteudo apóes o elemento html especificado
+
+*****/ CSS Grid /*****
+
+Grid-Template:
+
+display: grid;				--> Define o container pai do grid que vai agrupar todos os elementos dentro
+grid-template-columns: 200px 200px;	--> Define o tamanho de cada coluna do grid até o máximo da largura da página
+	2fr 2fr;			--> Tamanho fracional ao tamanho do container, criando 2 colunas com metade do tamanho total cada uma (fr respeita o conteudo da caixa, adaptando o tamanho da mesma caso o conteudo ultrapasse)
+	minmax(200px, 1fr);		--> Tamanho mínimo e máximo, nunca ultrapassando qualquer um dos valores (200px => min, 1f => max)
+	repeat(3, 1fr);			--> Repete um numero de vezes (3) o valor especificado (1fr) /*1fr 1fr 1fr*/
+	repeat(auto-fit, 100px)		--> Auto-fit calcula automaticamente o total de colunas e ajusta conforme o tamanho muda
+	repeat(auto-fit, minmax(100px, auto))	--> Responsividade automática das colunas, com tamanho minimo e maximo
+grid-gap: 10px;				--> Distância entre cada objeto do grid
+grid-columns-gap: 10px;			--> Distância entre as colunas
+grid-row-gap: 10px;			--> Distância entre as linhas
+grid-template-rows: 50px 100px;		--> Define o tamanho de cada linha do grid até o máximo da altura da página
+grid-template-areas:			--> Define as áreas do seu site
+	"logo nav nav"
+	"sidenav content advert"
+	"sidenav footer footer"
+.logo { grid-area: logo; }		--> Necessário definir o item da sua área com o grid-area de mesmo nome
+grid-template-areas: "logo ."		--> O . (ponto) é usado para definir uma área vazia do seu site
+grid-template: 100px 50px (linha) / 1fr 100px 1fr (coluna)	--> Define as rows (linhas) e columns (colunas) no mesmo código CSS, seguindo essa ordem e dividindo os mesmos por /
+grid-auto-columns: 100px;		--> Todas as colunas criadas automaticamente no grid terão 100px como especificado
+grid-auto-flow: row;			--> Todos os novos itens criados são jogados pra próxima linha
+grid-auto-flow: column;			--> Todos os itens novos são jogados pra próxima coluna
+grid-auto-flow: dense;			--> Todos os itens tentam se encaixar onde puderem (pode bagunçar a ordem os itens)
+grid: 100px / auto-flow 100px 50px;	--> Define automaticamente um grid com a primeira linha com 100px, auto-flow na coluna com 100px e 50px respectivamente
+justify-content: start; 		--> Alinha os itens dentro do grid horizontalmente x (células)
+	start		--> Começo
+	center		--> Centro
+	end		--> Final
+	stretch		--> Padrão (estica os itens)
+	space-around	--> Espaço ao redor de cada item
+	space-between	--> Espaço entre cada item
+	space-evenly	--> Espaço ao redor e entre os itens igualmente
+align-content: start;			--> Alinha os itens do grid verticalmente y (células)
+	start		--> Começo
+	center		--> Centro
+	end		--> Final
+	stretch		--> Padrão (estica os itens)
+	space-around	--> Espaço ao redor de cada item
+	space-between	--> Espaço entre cada item
+	space-evenly	--> Espaço ao redor e entre os itens igualmente
+justify-items: center;			--> Alinha os itens de cada célula do grid no eixo x
+align-items: center;			--> Alinha os itens de cada célula do grid no eixo y
+
+Grid Item (filho direto do grid)
+
+grid-column: 3;				--> O item ficará na coluna 3 do grid
+grid-column: 1(a partir) / -1(até);	--> O item se espandirá da primeira coluna até a ultima do seu grid
+grid-column: span 2;			--> O item se espandirá por 2 colunas
+grid-column-start: 1;			--> Especifica a coluna que ela começa
+grid-column-end: 3;			--> Especifica a coluna que ela termina, se expandindo até onde especificada
+grid-template-column: [inicio] 1fr [final] 1fr;	--> Atribui um nome inicio para a primeira coluna e um nome final para a segunda
+grid-row: 2;				--> O item ficará na linha 2 do grid
+grid-row: 2(a partir) / 4 (até);	--> O item começará na linha 2 e expandirá até a linha 4
+grid-row: span 2;			--> O item se expandirá por 2 linhas
+grid-row-start: 2;			--> O item começará na linha 2
+grid-row-end: 4;			--> O item terminará na linha 4
+grid-area: 1 / 2 / 4 / 3		--> 1 (grid-row-start) / 2 (grid-column-start) / 4 (grid-row-end) / 3 (grid-column-end)
+justify-self: start;			--> Alinha apenas um item especifico no eixo x horizontal
+align-self: start;			--> Alinha apenas um item especifico no eixo y vertical

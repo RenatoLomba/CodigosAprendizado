@@ -1,0 +1,25 @@
+Visual Basic .NET
+
+Notação Húngara:
+
+	-Button: btn
+	-ComboBox: cbo
+	-CheckBox: chk
+	-Label: lbl
+	-ListBox: lst
+	-MainMenu: mnu
+	-RadioButton: rdb
+	-PictureBox: pic
+	-TextBox: txt
+
+Codigo:
+
+	Sub					--> Subrotina, executa uma ação sem retornar nada (void)
+	'					--> Aspas simples servem para fazer um comentário
+	MessageBox.Show("Olá, " & txtNome.Text, _
+				"Mensagem ao Usuário")	--> Metodo Show da classe MessageBox serve para aparecer uma caixa de dialogo com o texto digitado
+	&					--> Concatenar Strings em VB
+	txtNome.Text				--> Pega o texto digitado na caixa de texto txtNome
+	_					--> Serve para pular uma linha no codigo sem quebrar a lógica
+	Me.Close()				--> Fecha o respectivo form
+	

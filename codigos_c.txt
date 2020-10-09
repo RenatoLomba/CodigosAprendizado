@@ -1,0 +1,95 @@
+Linguagem C
+
+#include --> Incluir biblioteca de funções do programa
+<stdio.h>  --> Funções de escrever na tela do programa
+<stdlib.h> --> Outra biblioteca de funções
+<string.h> --> Função de string (strlen)
+<stdbool.h> --> Utiliza variaveis do tipo boolean
+<time.h> --> Funções de tempo (time)
+int main() {"codigo"} --> Bloco de código, o programa vai começar lendo o main
+printf("texto"); --> Imprime o texto
+sprintf("variavel tipo char", "TEXTO") --> Coloca o texto escrito dentro da variavel
+\n --> Enter e vai para a próxima linha
+// --> Comentar
+int --> Variavel do tipo número inteiro (int)
+long --> Variavel do tipo inteiro para numeros muito grandes
+short --> Variavel do tipo inteiro para numeros muito pequenos
+double  -->Variavel do tipo número decimal com vírgula
+float --> Variável do tipo decimal para numeros pequenos
+char --> Variavel que guarda uma letra
+bool --> Variavel do tipo booleana
+("double")"variavel" --> Casting, transformo aquela variavel em double apenas neste momento
+"variável" --> Declaro a variável
+!"variavel" --> ! Se a variavel for verdadeira(1), eu inverto ela, tornando ela falsa(0)
+printf("%d" , "nome da variavel" --> Traz esta variavel naquele texto
+fprintf("variavel que guarda o arquivo", "&d", &variavel) --> Escreve em um arquivo de texto na posição atual de leitura
+scanf("%d", &"variavel") --> Lê o que o usuário digitar e guarda na variavel
+fflush(stdin) --> Limpa o enter da memoria do scanf, sempre colocar depois de usar o scanf
+fcanf("variavel que guarda um arquivo", "%d", &variavel) --> Lê de um arquivo de texto
+%d --> Variável inteiro
+%f --> Variável decimal com virgula (float)
+%lf --> Variável decimal maior (double)
+%.2f --> Imprime o double com 2 casas
+%c --> Imprime uma variavel do tipo char (letra)
+%s --> Imprime uma variavel tipo char (palavra)
+& "teste" --> Indica o endereço de memoria que a variavel foi guardada
+int* "teste" --> Ponteiro da variavel teste
+(*teste)++; --> Somar no conteudo de teste e nao de seu endereço
+int "palavra" [10] --> Colchetes abre um array (grupo de numeros ou caracteres com 10 posições
+"nome da variavel" = "var1" + "var2" --> Soma as variaveis
+"nome da variavel" = "var1" * "var2" --> Multiplica as variaveis
+abs (-2) --> ABS converte o numero negativo para positivo
+= --> Atribuir um valor
+== --> Comparação
+if() {} --> SE (Condição)
+("variavel" "condição" ? "se verdadeiro:_____":"se falso:____") --> Outra forma de fazer uma função if
+else {} --> Caso contrário (Condição)
+switch() { --> Condição (parecido com o if, só que executa todos simultaneamente, a nao ser que use o break ao final de cada linha)
+    case 1: --> caso a variavel seja 1
+          break;
+    case 2: --> caso a variavel seja 2
+          break;
+    default --> caso seja qualquer outra coisa
+          break;
+} 
+while(1 ou condição) {} --> Enquanto, abre um loop infinito, sendo necessaria uma condição ou break para terminar
+do-while --> Executa o bloco de codigo antes de avaliar a condição do while (loop)
+continue; --> Não executa o resto do codigo porém não para o loop
+break; --> Para um loop (for/while)
+for () --> Abre um loop finito, com um limite de vezes para acabar
+for ("variavel começa com um valor"; "condição para continuar o loop"; "determina o aumento no valor da variavel")
+for (int i = 1; i <=; i++); --> Exemplo de loop
+i++ --> Aumenta em 1 a variavel i
+i--   --> Diminui em 1 a variavel i
+rand() --> Randomiza um numero (aleatorio, grande ou pequeno) que pode ser guardado dentro de uma variavel
+srand () --> Semente de randomização para o rand()
+time(0) --> Me traz um numero de segundo entre 1 de Janeiro de 1970 até agora
+void "nome da função" () {} --> Crio uma função
+return "variavel/valor" --> Devolve alguma coisa no final da função
+return --> Termina a função sem acontecer nada, e retorna ao começo delas
+"variavel" = fopen("arquivo.txt", "r") --> O programa abre esse arquivo (arquivo.txt) apenas para leitura (r) como um ponteiro
+"variavel" = fopen("arquivo.txt", "r+") --> Permite que o arquivo seja lido e escrito pelo programa (r+)
+fseek("variavel do arquivo", "0", SEEK_SET) --> Joga a leitura do arquivo pelo FILE para a primeira linha do arquivo
+fseek("variavel do arquivo", "0", SEEK_END) --> Joga a leitura do aqruivo para a ultima linha
+fclose("variavel") --> Fecha um arquivo
+FILE* "variavel" --> Guarda o arquivo numa variavel
+char "nome" ["linhas"] ["colunas"] --> Criando uma matriz ou tabela
+"tipo"* "nome da variavel" = malloc(4) --> aloca dinamicamente 4 bytes na memoria da variavel
+sizeof(int/double/char) --> Devolve quantos bytes a variavel necessita
+malloc(sizeof(int)) --> Aloca dinamicamente quantos bytes a variavel irá precisar caso o valor dela possa ficar muito grande
+malloc(sizeof(int) * 50) --> Aloca um array de 50 posições dinamicamente na memória
+"int"** "v" = malloc(sizeof(int*) * 5) 	--> Aloca uma matriz de 5 linhas e 10 colunas dinamicamente na memória
+	for(int i = 0; i < 5; i++) {
+	v[i] = malloc(sizeof(int) * 10);
+free("nome da variável") --> Esvazia a memoria da variavel
+struct "nome" {} --> Cria uma estrutura que agrupa varias variaveis que andam juntas
+typedef "struct" "nome" --> Cria um tipo para a struct com o nome escolhido para facilitar a utilização
+extern "int" "nome da variavel" --> Cria uma variavel que sera lida em todos os arquivos compilados do programa (Global)
+strcpy ("destino", "origem") --> Copia uma string
+memcpy (&"destino", &"origem", sizeof("STRUCTORIGEM")) --> Copia uma struct inteira
+memset(&"nome da struct", 0, sizeof("STRUCTORIGEM")) --> Libera a memoria da struct (0/nulo) para ser usada novamente no futuro
+#define "NOME DA CONSTANTE" --> Declara uma constante (que nunca muda)
+system("pause") --> Pausa o sistema até uma tecla ser pressionada
+gcc "arquivo.c" -o "arquivo.out" --> Compilar o código usando GCC (Linux)
+./arquivo.out --> Roda o programa C (Linux)
+gcc "arquivo.c" -o "arquivo.exe" --> Compilar o código usando GCC (Windows)

@@ -1,0 +1,102 @@
+HTML
+
+<html lang="pt-br"></html> --> Página HTML
+<b></b> --> Bold (Negrito)
+<br> --> Quebra de linha
+<h1></h1> --> Cabeçalho tipo 1
+<p></p> --> Parágrafo
+<hr> --> Linha Horizontal
+<strong></strong> --> Negrito
+<em></em> --> Itálico
+<u></u> --> Underline
+<strike></strike> --> Linha de corte
+<ul></ul> --> Lista não ordenada
+<ul type="circle,square,disc"> --> Tipo da lista não ordenada
+<ol></ol> --> Lista ordenada
+<ol type="1,A,a,I,i"> --> Tipo da lista ordenada
+<li></li> --> Item da lista
+<!-- comentário -->
+<align ="center"> --> Alinhar ao centro
+<center></center> --> Alinhar tudo ao centro
+<img src="pasta/arquivo"> --> Adiciona uma imagem
+<img src="arquivo" height="100" width="100"> --> Configura a altura(height) e largura(width) da imagem
+<img src="endereço WEB da imagem" --> Adiciona a imagem a partir de uma imagem na internet
+<a href="destino">"Texto de exibição"</a> --> Adiciona um link
+<table></table> --> Cria uma tabela
+<table border="2"> --> Define a borda da tabela como 2 pixels
+<table width="100"> --> Define a largura da tabela
+<thead></thead> --> Agrupa os cabeçalhos da tabela
+<tbody></tbody> --> Agrupa o corpo da tabela
+<tfoot></tfoot> --> Agrupa o rodapé da tabela
+	<tr></tr> --> Linha da tabela
+	<td></td> --> Coluna/Dados da tabela
+	<th></th> --> Títulos das colunas em destaque
+	<td colspan="2"> --> Mescla 2 celulas da tabela (Colunas)
+	<td rowspan="2"> --> Mescla 2 células (Linhas)
+<form></form> --> Cria um formulário
+<form name="">	 --> Identificar o formulario e seus itens (sem espaços, sem acentos, sem palavra reservada)
+<form action=""> --> Envia os dados para algum lugar como Banco de Dados ou arquivo PHP (arquivo.jsp/arquivo.php)
+<form method=""> --> Forma como as informações irão ao servidor (get = pela barra de navegação, post = para o servidor sem aparecer na barra)
+    <fieldset></fieldset> --> Agrupar elementos dentro de um formulário
+    <legend></legend> --> Rótulo dentro do fieldset
+    <label></label> --> Título de uma caixa
+        Ex. <label>Nome</label>
+            <label>E-mail</label>
+	<input type="text" name="login"> --> Caixa de texto digitável de nome login
+        Atributos do input:
+            type="text" --> Define o tipo do input
+            name="nome" --> Nome do input (dados) para identificação
+            value="Renato" --> Valor do input que estará na caixa
+	    size="50" --> Tamanho da caixa
+	    maxlength --> Máximo de caracteres que se pode digitar na caixa
+            placeholder="exemplo" --> Palavra ou frase que estará na caixa como plano de fundo
+            required="required" --> Faz com que o preenchimento da caixa seja obrigatório
+            autofocus="" --> Faz com que o foco seja nesta caixa
+            min="5" --> Define um valor mínimo numérico (number/range)
+            max="10" --> Define um valor máximo numérico (number/range)
+            step="5" --> Faz com que o valor da caixa suba de 5 em 5 ao clicado na seta (number)
+        Tipos de input:
+            type="email" --> Caixa de texto tipo email
+            type="number" name="numero"> --> Caixa de texto tipo numero
+            type="url" --> Caixa de texto tipo url
+            type="search" --> Caixa de texto do tipo pesquisa
+            type="range" --> Seleção de range
+            type="date" --> Permite escolher uma data
+            type="color" --> Permite escolher uma cor
+            type="password" --> Caixa de texto tipo senha (esconde os caracteres)
+            type="button" --> Botão
+            type="submit" --> Botão que envia dados
+            type="file" --> Enviar arquivos
+            type="radio" --> Caixa de escolha (todas as caixas devem conter o mesmo name)
+                Exemplo:
+		            Sexo: <br>
+		            <input type="radio" name="sexo" value="M">Masculino<br>
+		            <input type="radio" name="sexo" value="F">Feminino<br>
+	    type="checkbox"> --> Caixa de seleção
+		    <select></select> --> Permite o usuário escolher de uma lista
+		    <select name=""> --> Nome da lista
+		    <option></option> --> Opções da lista
+		    <option value=""> --> Valor da opção
+	<textarea></textarea> --> Caixa de texto grande
+<div></div> --> Crio uma div (Divisão do site em linhas que ocupam todo o espaçamento da tela)
+<span></span> --> Crio um span (Divisão menor em pequenas caixas que ocupam pouco espaçamento da tela)
+<link rel="stylesheet" type="text/css href ="css/estilo.css"> --> Linka o HTML ao CSS
+<link rel="icon" href="img/favicon.png" --> Define um ícone que ficará ao lado do título da página
+&copy; --> Copyright
+<header></header> --> Cabeçalho
+<nav></nav> --> Barra de Navegação
+<footer></footer> --> Rodapé
+<main></main> --> Conteúdo principal do site
+<article></article> --> Tag de postagem ou artigo
+    <section></section> --> Seção do artigo
+<blockquote></blockquote> --> Bloco de citação
+<cite></cite>		--> Citação em si
+<time></time> --> Tag utilizada para informar uma data (Ex: <time>30/06/2020</time>)
+<aside></aside> --> Tag utilizada para criar conteúdos laterais como barras de navegação laterais
+<script></script> --> Utiliza um script de Js
+<script src="meu_arquivo.js"> --> Utiliza um arquivo como script de Js
+<!--[if lt IE 9]> --> HTML5 Shiv (para utilização em navegadores antigos)
+	<script src="html5shiv.js"></script>
+<![endif]-->
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<a href="" alt="Logo">	--> Alt define um nome alternativo pro link, caso o css ou imagem do logo não funcione, uma descrição geral daquele item

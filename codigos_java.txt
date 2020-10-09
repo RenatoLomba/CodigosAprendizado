@@ -1,0 +1,193 @@
+Linguagem JAVA
+
+	javac Programa.java			--> Compila um codigo escrito em java para um arquivo.class
+	java Programa				--> Roda o programa que deve ter o mesmo nome da class principal
+	System.out.print("Hello World");	--> Printa na tela o texto entre aspas
+	System.out.println("Geek University");	--> Printa na tela o texto entre aspas e pula para a próxima linha
+	int numero = 18; 			--> Variavel tipo Inteiro
+	float decimal = 2.50F			--> Variavel tipo Ponto Flutuante
+	double salario = 1250.75 		--> Variavel tipo Double
+	int valor = (int) salario 		--> Casting, transforma o 	valor de salario em um numero inteiro (1250)
+	long numeroGrande = 2000000000L 	--> Variavel tipo Long
+	short valorPequeno 			--> Variavel tipo Short
+	byte valorMinusculo 			--> Variavel tipo Byte
+	char letra = 'r'			--> Variavel tipo Char
+	System.out.println(numero); 		--> Printa na tela o texto da variavel int "numero"
+	System.out.println("O numero é " + numero); --> Printa na tela um texto com o valor da variavel "numero" em seguida
+	"numero" = numero + 32; 		--> Estou somando o valor 18 da variavel numero com 32 e guardando de volta na variavel número
+	String nome = "Matthew Mercer"		--> Variavel tipo String
+	if() {} else {}				--> Operador condicional if/else
+	if() {} else if () {} else {}		--> Operador com mais de uma condição if/elseif/else
+	||	--> OU
+	&&	--> E
+	boolean "algumacoisa" = true/false	--> Variavel booleana verdadeiro ou falso
+	boolean "algcoisa" = quantidade >= 2;	--> Pode colocar uma expressão dentro do boolean que retornará true ou false (como na condicional do if)
+	switch (variavel) {			--> Condicional switch
+	case opcao1:
+		comando;
+		break;
+
+	default:
+		comando;
+		break;
+}
+	while(condicao) {}			--> Laço de repetição while
+	for(int i = 0; i <= 10; i++) {}		--> Laço de repetição for
+	break;					--> Quebra a estrutura de repetição (força sua parada)
+
+/*****Orientação a Objetos*****/
+
+	public class Conta {}			--> Crio uma classe de nome 	Conta
+	Conta conta1 = new Conta();		--> Conta = tipo/conta1 = nome/ new Conta() = classe Conta; Crio uma instância do tipo Conta chamada 	conta1
+	conta1.saldo = XXXX;			--> Atribuo um valor acessando o atributo saldo (double) do objeto conta1
+	public void deposita(double valor) {}	--> Crio um método daquela classe Conta
+	void					--> Função sem retorno
+	boolean					--> Função que retorna true ou false
+	return					--> Utilizado para retornar algum valor de um método
+	this.saldo				--> This usado na classe referencia a ela mesma (ao proprio objeto utilizando ela)
+	conta1.deposita(200)			--> Executa o metodo passando o parâmetro especificado
+	conta1.titular = renato			--> Caso renato seja um objeto do tipo cliente e o atributo titular seja do tipo Cliente, conta1.titular será uma referencia ao objeto Cliente chamado renato
+	conta1.titular = new Cliente		--> O Atributo titular recebe uma referencia a um novo objeto do tipo Cliente criado para esta conta
+	conta1.titular.nome			--> Acesso um atributo que está dentro de outro objeto cujo objeto conta1 faz referencia
+	Cliente titular = new Cliente()		--> Atribui uma referencia a um outro objeto na propria criacao deste objeto
+	private atributo			--> Torna um atributo privado, que não poderá ser acessado diretamente através de objeto.atributo, apenas por seus métodos (Encapsulamento)
+	static					--> Indica que aquele atributo ou metodo percence apenas a classe e não ao objeto, podendo ser acessado somente pela chamada da Classe
+	class Cliente extends Funcionario	--> A classe Cliente herda os atributos e metodos da classe funcionario (herança)
+	protected				--> Define um atributo como protegido, isto é, só pode ser acessado por classes filhas e relacionadas
+	super.atributo/super.metodo()		--> Acessar um atributo ou metodo da classe mãe/superclasse através da classe filha (super significa olhar para cima na hierarquia)
+	super(parametros);			--> O Super deve ser utilizado como metodo no construtor da classe filha passando os devidos parametros pra classe mãe
+	@Override				--> Indica ao java que voce quer sobreescrever um metodo
+	abstract				--> Torna uma classe abstrata, onde ela continuará existindo porém não se poderá criar objetos dela, apenas de seus filhos. Também serve para métodos que não são especificos da classe mãe, podendo ser usados apenas pelas classes filhas
+	interface				--> Cria uma interface que atua como um contrato onde quem assinar esse contrato precisa implementar seus metodos, todos os metodos de uma interface precisam ser abstratos para que seus assinantes os implementem
+	implements				--> Indica que aquela classe é uma assinante de um contrato e precisa implementar seus metodos
+	try {}					--> Metodo responsavel por tentar executar uma linha de codigo que possa gerar um erro, porém desta forma, podemos tratar o erro e impedir que a execução do programa pare
+	catch(ArithmeticException ex) {}	--> Metodo responsavel por tratar o codigo que o try estava tentando executar, passando como parametro a exceção que ocorreu, assim mostrando outro codigo ao invés do erro e não para a execução do programa
+	catch(ArithmeticException | NullPointerException ex) {}	--> Pode-se tentar capturar e tratar mais de um tipo de erros utilizando o condicional | (OU)
+	ex.getMessage()				--> Metodo da classe ArithmeticException utilizado para pegar a mensagem de erro, podendo ser guardado numa String
+	ex.printStackTrace()			--> Metodo utilizado para imprimir a pilha de execucao até o erro ocorrer
+	throw new ArithmeticException("erro")	--> Joga uma exceção na pilha de execução
+	throws ExcecaoErro			--> Informa que um metodo ou classe possui uma possivel exceção, e na hora de compilacao deve ser tratado com try catch ou throw
+	finally					--> Bloco do try catch que funciona como um final do seu tratamento, sempre será executado tendo ocorrido erro ou não
+	try(Conexao conexao = new Conexao())	--> No try pode-se instanciar um objeto que sera usado no bloco, desde que o mesmo implemente em sua assinatura o AutoCloaseable com o metodo close(), assim o try catch não precisará de um finally, será fechado automaticamente no final com o metodo close()
+	package teste;				--> Comando necessario para indicar ao codigo o pacote que o mesmo pertence, vem na primeira linha do codigo antes de qualquer outra coisa
+	pacote.Classe				--> Quando se quer usar uma classe que esta dentro de outro pacote, deve usar o codigo "nomedopacote.NomeDaClasse" FQN (Full Qualified Name)
+	br.com.nomeempresa.nomeprojeto.pasta	--> Boa pratica na hora de nomear as classes por pacote, seguindo o modelo de endereço da web, partindo da pasta br
+	import br.com.bytebank.banco.modelo.*	--> Importa uma classe no projeto, especificando seu caminho, para que possa ser usado seu nome simples em sua utilização
+	/**			--> Documentação do codigo
+	@author			--> Tag do autor (classe ou interface)
+	@version		--> Tag da versao (classe ou interface)
+	@param			--> Tag dos parametros (metodo e construtor)
+	@return			--> Tag do retorno
+(metodo)
+	@exception		--> Tag de exceção
+(metodo ou construtor)
+	javadoc			--> Documentação do java, sendo possivel exportar como documento HTML para outros desenvolvedores
+	jar			--> Biblioteca de codigos e classes java, sendo possivel exportar e importar qualquer biblioteca no seu projeto
+	jar executavel		--> Executavel do seu programa java a partir de um metodo main escolhido
+	objeto.toString()	--> Metodo toString da classe Object que retorna um endereço de memoria do objeto instanciado, podendo ser sobreescrito para retornar outro valor
+	int[] numero = new int[5]		--> Crio um array de 5 posicoes do tipo int (todas as posições iniciando com o valor 0)
+	int[] numero = {19, 22, 30}		--> Outra forma de criar um array ja passando diretamente para ele os valores que cada indice irá conter
+	numero.length				--> Retorna a quantidade de posições do array
+	Conta[] contas = new Conta[5]		--> Crio um array de referencias do tipo Conta com 5 posições (todas as posições iniciando com o valor null)
+	contas[0] = new Conta()			--> Crio um objeto na posicao 0 do array
+	contas[0].deposita(500)			--> Utilizo um metodo a partir da referencia posicao 0 que aponta para um objeto do tipo conta
+	((ContaCorrente) contas[0])		--> Faço um casting de referencias, passando contas[0] do tipo Conta para o tipo ContaCorrente
+	System.currentTimeMillis()		--> Devolve a quantidade de milisegundos desde 1 de janeiro de 1970
+
+java.util
+
+	ArrayList lista = new ArrayList()		--> Crio um array utilizando a classe do java.util com capacidade inicial de 10 posições
+	ArrayList lista = new ArrayList(20)		--> Crio um array lista com a quantidade de posicoes especificada
+	ArrayList<Conta> lista = new ArrayList<Conta>()	--> Crio um array lista que só e apenas irá guardar objetos do tipo Conta especificado entre <>
+	lista.add(elemento)				--> Adiciono algum elemento de qualquer tipo ao array lista
+	lista.size()					--> Retorna a quantidade de elementos ja adicionados na lista
+	lista.get(indice)				--> Retorna a referencia do elemento no indice especificado
+	lista.remove(indice)				--> Remove a referencia do elemento no indice especificado
+	lista.remove(objeto)				--> Remove a referencia especificada caso ela esteja no array
+	for(Object o : lista) {}			--> Faz um loop percorrendo o array lista assim como (for(int i = 0; i < lista.size(); i++))
+	lista.contains(objeto)				--> Retorna true caso a lista contenha o determinado objeto (utilizando o metodo equals internamente para comparar os objetos)
+	lista.isEmpty()					--> Retorna true caso a lista não possua nenhum objeto
+	equals()					--> Metodo da classe object que compara as referencias de 2 objetos, podendo ser sobreescrito por um metodo que compara valores mais especificos
+	LinkedList lista = new LinkedList()		--> Lista encadeada, sua implementação e seus metodos são os mesmos do ArrayList
+	Vector lista = new Vector()			--> Lista que é threadsafe, ou seja, que pode trabalhar em 2 pilhas de execução diferentes, porém é mais pesado e custoso para o sistema
+	Integer numero = 19				--> Cria um objeto que substitui o primitivo int
+	numero.intValue()				--> Retorna o valor do primitivo int do ojeto
+	numero.valueOf(19)				--> Atribui um valor ao primitivo do objeto
+	numero.valueOf("10")				--> O metodo valueOf também pode converter uma String passada em um int
+	int numero = Integer.parseInt("10")		--> Retorna a String passada no parametro como um int
+	numero.doubleValue()				--> Passa o valor do objeto para o primitivo double (floatValue(), longValue(), etc)
+	Integer.max(10, 19)				--> Retorna o maior valor entre os 2 parametros passados
+	Integer.max(10, 19)				--> Retorna o menor valor entre os 2 parametros passados
+	Integer.MIN_VALUE				--> Retorna o menor valor que um Integer pode guardar
+	Integer.MAX_VALUE				--> Retorna o maior valor que um Integer pode guardar
+	Integer.SIZE					--> Retorna a quantidade de bits que um Integer possui
+	Integer.BYTES					--> Retorna a quantidade de bytes que um Integer possui
+	Double						--> Classe wrapper do double (Integer = int, Float = float, Long = long, Character = char, Boolean = boolean)
+	Boolean.FALSE					--> Retorna um boolean false
+	Boolean.TRUE					--> Retorna um boolean true
+	Number numero = 15				--> Classe mãe de todas as classes wrappers
+	listaConta.sort(ComparadorConta)		--> Metodo que ordena a lista baseado num objeto comparador criado por nós mesmos
+	class ComparadorConta implements Comparator<Conta> --> Classe que implementa um método para ordenação de uma lista do tipo especificado (Conta)
+	return Integer.compareTo(num1, num2)		--> Exemplo de implementacao pelo numero da conta, caso o numero da primeira seja maior que o numero da segunda, retorna um valor positivo, ficando entao na frente da segunda
+	Tipo<Tipagem> ref = (parametros) -> { funcao }	--> Criando uma Lamba, que funciona como uma função anônima
+	System.out.format("Texto tal: %s", nome)	--> Formatação de um texto concatenando com variaveis, similar ao da linguagem C (%s - String, %d - Int, %.2f - Float, %n - Pula linha)
+
+Metodos da String
+
+	nome.replace("String", "String")	--> Retorna a String com os caracteres substituidos (pode ser uma sequencia de caracteres)
+	nome.replace('char', 'char')		--> Retorna a String com apenas um dos caracteres encontrados foi substituidos (aspas simples indicam apenas um char)
+	nome.toUpperCase()			--> Retorna todos os caracteres em letra maiuscula
+	nome.toLowerCase()			--> Retorna todos os caracteres em letra minuscula
+	nome.charAt(2)				--> Retorna o caracter na posição indicada no metodo
+	nome.indexOf('char')			--> Retorna a posicao do primeiro caracter indicado no metodo
+	nome.indexOf("String")			--> Retorna a posicao da primeira String indicada no metodo
+	nome.substring(2)			--> Retorna todos os caracteres a partir da posicao indicada no metodo
+	nome.length()				--> Retorna a quantidade de caracteres em uma String
+	nome.isEmpty()				--> Retorna true caso a String esteja vazia (sem nenhum caracter atribuido)
+	nome.contains("String")			--> Retorna true caso contenha na String nome a sequencia indicada no parametro do metodo
+	nome.trim()				--> Retorna a String nome porem removendo todos os espaços entre palavras e letras
+	nome.concat("String")			--> Retorna o concatenamento da String com a String passada como parametro no metodo
+	nome.compareTo(outroNome)		--> Metodo que compara as Strings por ordem alfabetica, retorna negativo, positivo ou 0
+	nome.split(",")				--> Metodo que retorna um array da String separando-os pelo parametro passado (virgula, ponto, etc)
+	String.format("Texto tal: %s", nome)	--> Formatação de um texto concatenando com variaveis, similar ao da linguagem C (%s - String, %d - Int, %.2f - Float)
+
+java.io
+
+	InputStream file=new FileInputStream("arquivo")	--> Objeto do tipo Fluxo de Entrada por arquivo
+	Reader reader = new InputStreamReader(file)	--> Objeto para leitura de dados em bytes do arquivo
+	Reader buff = new BufferedReader(reader)	--> Objeto que consegue ler o arquivo e retornar uma String
+	buff.readLine()					--> Metodo do BufferedReader que retorna uma String da primeira linha do arquivo
+	buff.close()					--> Fechamento do Input (IMPORTANTE)
+	throws IOException				--> Declara que uma Exceção pode ser jogada (IMPORTANTE)
+	OutputStream file = new FileOutputStream("")	--> Objeto tipo fluxo de saída  por arquivo
+	Writer writer = new OutputStreamWriter(file)	--> Objeto para escrita de dados em bytes no arquivo
+	BufferedWriter buff = new BufferedWriter(writer)--> Objeto que consegue escrever uma String no arquivo
+	buff.write("Teste")				--> Metodo para escrita no arquivo
+	buff.newLine()					--> Vai para a proxima linha do arquivo
+	buff.flush()					--> Descarga de caracteres
+	InputStream file = System.in;			--> Entrada pelo console (teclado)
+	OutputStream fileout = System.out;		--> Saída pelo console
+	FileWriter writer = FileWriter("arquivo.txt")	--> Objeto de escrita de dados mais simples
+	writer.write("Hello World\n")			--> Escreve no arquivo o texto e pula pra proxima linha com o \n
+	System.lineSeparator()				--> Metodo usado para separar as linhas em qualquer sistema operacional
+	writer.close()
+	PrintWriter print = new PrintWriter("arquivo.")	--> Objeto que escreve no fluxo de bytes de um arquivo
+	print.println("Hello world")			--> Metodo que escreve no arquivo e pula linha ln
+	Scanner scan = new Scanner(new File)		--> Crio um objeto do tipo scanner passando um arquivo que será escaneado
+	scan.nextLine()					--> Retorna a próxima linha a ser lida do arquivo
+	scan.hasNextLine()				--> Retorna true caso haja uma próxima linha no arquivo
+	linhaScan.useDelimiter(",")			--> Cria uma separação dos caracteres da linha usando o parametro indicado (virgula, ponto, etc)
+	linhaScan.next()				--> Retorna o proximo valor na separação de caracteres
+	linha.useLocale(Locale.US)			--> Informa ao Scanner para levar em consideração as regras de pontuação numeral de determinada região
+	scanner.close()					--> Fecha o Scanner
+
+
+JFrame "frame" = new JFrame("Geek University"); --> Cria uma tela desktop
+JPanel "panel" = new JPanel(); --> Crio um painel para a tela
+JButton "btn1" = new JButton("Seja Bem-vindo(a)"); --> Crio um elemento botão com o texto entre aspas
+panel.setLayout(new BorderLayout(1,0)); --> Crio um layout para o painel
+panel.add(btn1, BorderLayout.NORTH); --> Adiciono o botão criado no painel criado com o layout criado na posição Norte da tela
+frame.setContentPane(panel); --> Adiciona o conteudo do painel na tela frame do programa
+frame.pack(); --> Empacota todos os elementos dentro do frame
+frame.setSize(640, 480); --> Configura um tamanho para a tela
+frame.setVisible(true); --> Torno a tela visível

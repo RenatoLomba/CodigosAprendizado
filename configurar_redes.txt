@@ -1,0 +1,142 @@
+Redes (Cabo console/Terminal)
+
+Roteador
+
+Router#show running-config --> Mostra as configurações atuais
+Router#show ip interface brief --> Mostra os IPs configurados
+Router#show ip route --> Mostra a tabela de roteamento
+Router(config)#interface GigabitEthernet 0/0 --> Configurar porta
+Router(config-if)#no shutdown --> Habilitar porta
+Router(config-if)#ip address "IP do Gateway" "Subnet" --> Configura um IP na porta
+Router(config)#ipv6 unicast-routing --> Habilitar IPv6
+Router(config-if)#ipv6 address "IPv6" --> Configurar um IPv6 na porta do roteador
+Router#wr --> Salva as configurações do roteador
+
+	DHCP
+
+Router(config)#ip dhcp pool "Teste" --> Cria um pool DHCP no roteador
+Router(dhcp-config)#network "IP da Rede" "Subnet" --> Rede do DHCP
+Router(dhcp-config)#default-router "IP do Gateway" --> Roteador de comunicação DHCP
+Router(dhcp-config)#dns-server "IP do servidor DNS" --> Configura o DNS no DHCP
+Router(config-if)#ip address "IP do roteador DHCP" "Subnet" --> Porta de comunicação DHCP
+Router(config)#ip dhcp excluded-address "IP" --> IP não irá ser atribuido pelo DHCP
+
+	Vlans
+
+Router(config)#interface GigabitEthernet 0/0.1 --> Dividindo a porta para trabalhar com Vlans
+Router(config-subif)#encapsulation dot1Q "ID da Vlan" --> Configurar Vlan na porta
+Router(config-subif)#ip address "IP do Gateway na rede da Vlan" --> Configurar IP na porta da Vlan
+Router(config-dhcp)#default-router "IP do Gateway na rede da Vlan" --> Configurar DHCP para trabalhar na Vlan
+
+	Segurança
+
+Router(config)#enable secret "senha" --> Configura uma senha para o roteador
+Router(config)#line vty/console/ssh 0 3 --> Configurar segurança de acesso ao roteador
+Router(config-line)#password "senha" --> Senha de acesso
+Router(config-line)#login --> Configuração de segurança
+
+	Access-list
+
+Router(config)#ip access-list extended "Nome da lista" --> Configurar uma lista de acesso extendida
+Router(config-ext-nacl)permit tcp "IP de origem" "Wildcard" "Ip de destino" "Wildcard" --> Configurando permissões de acesso
+Router(config-ext-nacl)deny tcp "IP de origem" "Wildcard" "Ip de destino" "Wildcard" --> Configurando negações de acesso
+Router(config-ext-nacl)permit ip any any --> Permitir qualquer acesso de qualquer lugar e qualquer protocolo
+Router(config-subif)#ip access-group "Nome da lista" in --> Configurar uma porta para trabalhar na lista de acesso com entrada de pacotes
+Router(config)#no "ip access-list extended 'Nome da lista'" --> Exclui uma lista
+
+	WAN
+
+Router(config)#interface serial 0/1/0 --> Configurar a porta serial de comunicação do roteador interno/externo
+Router(config-if)#ip address "IP" "Subnet" --> Configurar um IP público fornecido pelo provedor para comunicação externa na porta serial
+Router(config)#ip route "Network destino" "Subnet" "IP próximo salto (Gigabit/Serial)" --> Configurar uma comunicação externa do roteador
+Router(config)#ip access-list standard "NAT" --> Configurar o NAT no roteador interno
+Router(config-std-nacl)#permit "ip da rede interna" "Wildcard"
+Router(config-subif)#ip nat inside --> Configurar o NAT na rede interna (GigabitEthernet)
+Router(config-subif)#ip nat outside --> Configurar o NAT na rede externa (Serial)
+Router(config)#ip nat inside source list "NAT" interface serial 0/1/0 overload --> Traduzir os IPs internos para um IP público
+
+	RIP
+
+Router(config)#router rip --> Configurar protocolo RIP no roteador para divulgação de IPs
+Router(config-router)#version 2 --> Versão 2
+Router(config-router)#no auto-summary --> Roteadores em redes diferentes
+Router(config-router)#network "IP Network" --> Rede a ser divulgada aos roteadores que ele se comunicar
+Router(config-router)#redistribute rip --> Redistribuindo as rotas do BGP
+Router(config-router)#default-information originate --> Saída de informação padrão
+
+	OSPF
+
+Router(config)#router ospf "1" --> Configurar protocolo OSPF no roteador para divulgação de IPs externamente
+Router(config-router)#network "Network a ser divulgada" "Wildcard" area "0" --> Configurar a rede a ser divulgada na comunicação e a área principal 0
+Router(config-router)#redistribute bgp "AS do provedor" subnets --> Redistribuindo as rotas do BGP 
+
+	BGP
+
+Router(config)#router bgp "AS do provedor" --> Configurar protocolo BGP para divulgação de IPs entre provedores de serviço
+Router(config-router)#neighbor "IP Roteador vizinho" remote-as "AS do provedor vizinho"
+Router(config-router)#network "Network a ser divulgada" mask "Subnet"
+
+
+Switch
+
+Switch#show running-config --> Mostra as configurações atuais
+Switch#show ip interface brief --> Mostra os IPs configurados
+Switch(config)#vlan "ID da Vlan" --> Cria uma Vlan
+Switch(config-vlan)#name "Nome da Vlan" --> Nome da Vlan
+Switch(config)#interface fastEthernet 0/1 --> Configurar porta no switch
+Switch(config-if)#switchport mode access --> Porta em modo acesso
+Switch(config-if)#switchport access vlan "ID" --> Porta acessando a Vlan
+Switch(config-if)#switchport mode trunk --> Porta de comunicação entre Vlans e Switchs
+Switch(config-if)#switchport port-security
+Switch(config-if)#switchport port-security mac-address "MAC" --> Será aceito apenas um endereço MAC nesta porta
+Switch(config)spanning-tree "Nome da Vlan" priority 0 --> Configurar STP na Vlan como root/principal (fazer isso em todas)
+Switch(config)#enable secret "senha" --> Configura uma senha para o switch
+Switch(config)#line vty/console/ssh 0 3 --> Configurar segurança de acesso ao switch
+Switch(config-line)#password "senha" --> Senha de acesso
+Switch(config-line)#login --> Configuração de segurança
+Switch#wr --> Salva as configurações do switch
+
+Firewall Cisco ASA
+
+ciscoasa#write reload --> Configurar do zero
+ciscoasa#reload --> Recarregar o sistema
+ciscoasa(config)#hostname "asa" --> Configurar o nome do dispositivo
+asa#show running-config --> Mostra as configurações atuais
+asa(config)#interface Management 1/1 --> Porta de configuração
+asa(config-if)#ip address "IP" "Subnet" --> Configurar um IP para a porta, para realizar a configuração através de um terminal, o PC deve estar com um IP na mesma rede e com o Gateway da porta do Firewall
+asa(config-if)#nameif "ngmt" --> Nome da interface de configuração
+asa(config-if)#no shutdown --> Habilida a porta
+asa(config)#username "admin" password "admin" --> Configurar usuário e senha de acesso
+asa(config)#ssh "Network" "Subnet" "ngmt" --> Configurar acesso via SSH ao Firewall
+asa(config)#aaa authentication ssh console LOCAL --> Configurar o Firewall localmente e não por servidor
+asa(config-if)#nameif "inside" | ip address "IP na rede interna (privado)" "Subnet" --> Configurar porta da rede interna
+asa(config-if)#nameif "dmz" | ip address "IP na rede do servidor" "Subnet" --> Configurar porta ligada ao servidor
+asa(config-if)#nameif "outside" | ip address "IP na rede externa (público)" "Subnet" --> Configurar porta ligada ao provedor
+asa(config-if)#security-level "1-100" --> Cofigurar nível de segurança: inside=100 | dmz=50 | outside=0
+asa(config)#access-list "nome" "permit/deny" "protocolo" "origem" "destino" echo-reply --> Cria uma lista de acesso
+asa(config)#access-list "dmz_access" permit icmp any any echo-reply --> Permitir comunicação ping entre um computador interno e o servidor
+asa(config)#access-group "nome" in interface "dmz" --> Atrelar a lista a porta do servidor
+asa(config)#route "outside" 0.0.0.0 0.0.0.0 "IP do provedor" --> Configurar rota padrão de saída do firewall
+asa(config)#access-list "nome" permit tcp any host "IP do servidor" eq "443=httpd" --> Permitir acesso a porta HTTPS do servidor vindo de qualquer rede
+asa(config)#no "comando" --> Apaga um comando como o feito para criar uma al, apagando ela assim
+asa(config)#dhcpd address "range-range" "inside" --> Configurar um DHCP no Firewall para entrega de endereços internamente
+asa(config)#dhcpd dns "8.8.8.8" --> Configurar o DHCP para atríbuir um DNS
+asa(config)#dhcpd enable "inside" --> Habilitar o DHCP na porta interna do Firewall
+asa(config)#object network "nome do objeto" --> Criar um objeto para configuração do NAT
+asa(config-network-object)#subnet "IP da rede interna" "Subnet" --> Atribuir uma rede a este objeto
+asa(config-network-object)#nat ("inside","outside") dynamic "outside" --> Configurar que todo acesso vindo da rede interna sairá para a rede externa com o IP público da porta externa fornecido pelo provedor
+asa(config)#access-list "outside_access" permit icmp any any echo-reply --> Permitir teste de ping entre alguém da rede externa e alguém na rede interna
+asa#write memory --> Salva as configurações no start-up
+asa#copy running-config tftp: --> Backup das configurações em um servidor TFTP
+asa#copy tftp: running-config --> Restaura as configurações por um servidor TFTP
+
+
+
+
+
+
+
+
+
+
+

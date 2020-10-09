@@ -1,0 +1,282 @@
+*****JavaScript*****
+
+//comentário de uma linha
+/* comentário de múltiplas linhas
+var nome_da_variavel --> Crio uma variável
+	= --> Atribui um valor
+	var texto = 'Hello World'    --> String
+	var numeroInteiro = -7 	     --> Number (inteiro)
+	var numeroFracionado = 10.75 --> Number (fracionado)
+	var teste = true/false       --> Boolean
+	var teste = null             --> Null (nula)
+	var teste = undefined        --> Undefined (indefinida)
+var nome = prompt('Digite aqui o seu nome: ') --> O usuário passará um valor para a variável através de uma janela de pop-up
+alert('Hello World') --> Abre um dialog pop-up na tela
+alert(numeroFracionado) --> Abre um dialog com o valor da variável especificada
+console.log('Hello World') --> Escreve o valor no console do browser
+console.log(texto) --> Escreve o valor da variavel no console do browser
+document.write('Hello World') --> Escreve o valor no documento HTML
+document.write(numeroInteiro) --> Escreve o valor da variavel no documento
+document.write('<h1>Hello World</h1>') --> Escreve uma tag no body do documento
+document.write('<h1>Hello ' + nome + ', how are you?</h1') --> Concatenação com um texto e a variavel nome
+	+ --> Possui a função de concatenação quando os valores são strings de texto
+
+if(condição) { --> if, condição para que uma ação seja executada
+} else { --> else, caso contrário, ou seja, caso a condição não seja efetuada
+}
+if(condição) {
+} else if(condição){
+} else {
+}
+
+var teste = (condicao) ? verdadeiro : falso --> Operador ternario (forma alternativa porem limitada de escrever o if/else, onde o resultado de verdadeiro é guardado dentro da variavel)
+
+switch(variável) {	--> Forma alternativa de if/else
+    case 1:
+	//trecho de código que será executado
+	break
+    default:
+	//trecho de código que será executado
+	break
+}
+
+Operadores Condicionais:
+	==  --> Igual a
+	=== --> Idêntico a (igual e do mesmo tipo)
+	!=  --> Diferente de
+	!== --> Não idêntico (diferente e de tipo diferente)
+	<   --> Menor que
+	>   --> Maior que
+	<=  --> Menor igual que
+	>=  --> Maior igual que
+
+Operadores Lógicos:
+	&&  --> E (verdadeiro se todas as expressoes forem verdadeiras)
+	||  --> Ou (verdadeiro se pelo menos uma das expressoes for verdadeira)
+	!   --> Negação (Inverte a expressao de true para false e vice-versa)
+
+variavel = parseInt(variavel) --> Transforma o valor contido na variavel para o tipo number Inteiro
+variavel = parseFloat(variavel) --> Transforma o valor contido na variavel para o tipo number Float (quebrado)
+variavel.toString() --> Transforma o valor contido na variavel para o tipo string Texto
+
+Operadores Aritméticos:
+	+  --> Adição
+	-  --> Subtração
+	*  --> Multiplicação
+	/  --> Quociente
+	%  --> Resto de uma divisão
+	++ --> Pré(esquerda)/pós(direita) incremento
+	-- --> Pré/pós decremento
+	+= --> Soma um valor a própria variavel (+, -, *, /, %)
+
+function calcularAreaTerreno(largura,comprimento) { --> Cria uma função
+    var area = largura * comprimento
+    return area				--> Retorna um valor da função
+}
+var area = calcularAreaTerreno(15, 25) --> Faz uso da função criada indicando os parametros 15 para largura e 25 para comprimento, e guardando o retorno numa variavel
+document.write(calcularAreaTerreno()) --> Escreve no documento o retorno dado pela funcao (return area)
+    //void 	  --> Não oferece retorno da função
+    //retorno 	  --> Retorna algum dado da função
+
+'Renato'.length 	 --> Retorna a quantidade de caracteres na string
+'Renato'.charAt(posicao) --> Retorna o caracter na posicao especificada
+'Renato'.indexOf('a') 	 --> Retorna a primeira posição que se encontra o caracter
+'Renato Lomba'.replace('Lomba', 'Rosa') --> Substitui o valor pesquisado por outro
+'Renato Lomba'.substr(7, 5) --> Retorna a partir do caracter 7 a quantidade de caracteres especificados 5 ('Lomba')
+'Renato'.toLowerCase() 	 --> Retorna a string com todos os caracteres minusculos (renato)
+'Renato'.toUpperCase() 	 --> Retorna a string com todos os caracteres maiusculos (RENATO)
+' Renato '.trim() 	 --> Remove os espaçamentos nas extremidades da string
+'Renato'.replace('nato', '')	--> Substitui os caracteres na esquerda pelos da direita na chamada da função (== 'Re')
+
+Math.ceil(10.380) 	 --> Retorna o numero arredondado para cima  (11)
+Math.floor(10.380)	 --> Retorna o numero arredondado para baixo (10)
+Math.round(10.580)	 --> Retorna o numero arredondado com base na média (11)
+Math.random()		 --> Retorna um valor aleatório entre 0 e 1
+Math.min(0, 150, -200)	 --> Retorna o menor valor (-200)
+Math.max(0, 150, -200)	 --> Retorna o menor valor (150)
+Math.abs()		 --> Retorna o valor absoluto (positivo) de um numero
+
+var data = new Date()	 --> Retorna a data completa atual do navegador
+var data1 = newDate(year, month, day, hours, minutes, seconds, miliseconds) --> Criar uma data especificando seus valores
+data.getDate()		 --> Retorna o dia do mês atual
+data.getDay()		 --> Retorna o dia da semana atual
+data.getFullYear()	 --> Retorna o ano atual completo (2020)
+data.getMonth() + 1	 --> Retorna o mês atual (0-11)
+data.getTime() 		 --> Retorna a quantidade de milisegundos entre 1 de Janeiro de 1970 até a data especificada
+data.setDate(data.getDate() + 1)	 --> Adicionar ou Remover um valor do dia
+data.setMonth(data.getMonth() + 1)	 --> Adicionar ou Remover um valor do mês
+data.setFullYear(data.getFullYear() + 1) --> Adicionar ou Remover um valor do ano
+
+Eventos:
+	<Mouse>
+onclick=""	--> Quando clicado
+ondblclick=""	--> Duplo clique
+onmouseup=""	--> Clique do mouse é soltado
+onmouseover=""  --> Mouse esta encima do elemento
+onmouseout=""	--> Mouse passa e sai do elemento
+	<Teclado>
+onkeydown=""	--> Quando uma tecla for pressionada dentro do elemento
+onkeyup=""	--> Quando uma tecla for solta após pressionada
+onkeypress=""	--> Quando uma tecla de caracter for pressionada
+	<Janela>
+onresize=""	--> Quando o tamanho da janela do browser for modificado <body>
+onscroll=""	--> Quando utilizar a barra de rolagem <body>
+	<Formulário>
+onfocus=""	--> Quando o foco esta no elemento (clicado)
+onblur=""	--> Quando o foco esta fora do elemento (clicado fora da caixa)
+onchange=""	--> Quando o estado do elemento é modificado <select>
+
+DOM:
+document.getElementById('id_usuario')   --> Seleciona um elemento html pelo ID
+document.getElementByTagName('input')   --> Seleciona um elemento pelo nome da tag
+document.getElementByClassName('caixa') --> Seleciona um elemento pela classe
+document.getElementByName('nome')	--> Seleciona pelo atributo name
+document.formulario			--> Seleciona o elemento de name formulario
+document.formulario.cores		--> Seleciona o elemento cores que está dentro de formulario
+document.formulario.cores.value		--> Seleciona o valor do elemento cores
+.value = ''		--> Seleciona o atributo valor contido no elemento (string)
+.style			--> Seleciona o estilo contido no elemento
+.style.background = ''		--> Seleciona o atributo "background" do style
+.style.backgroundColor = ''	--> Seleciona o atributo "background-color" do style
+.style.width/height = ''	--> Seleciona os atributos "widht" ou "height" do style
+.className = ''			--> Seleciona a classe do elemento
+.remove()			--> Remove o elemento selecionado
+.innerHTML			--> Seleciona o texto contido dentro da tag <p>exemplo</p>
+var imagem = document.createElement('img')	--> Cria um elemento html
+document.body.appendChild(imagem)		--> Atribui um elemento html(filho) ao body(pai)
+this.funcao()	--> Operador this que se refere ao próprio elemento
+
+eval(variavel) --> Função eval que interpreta o valor contido na variavel de forma inteligente, podendo transformar uma expressao string em aritmética
+
+Arrays:
+var lista = Array() ou []		--> Objeto para criação de uma var tipo array
+Array('objeto1', 'objeto2') ou ['objeto1', 'objeto2'] --> Atribui objetos ao array
+var array = Array() --> Criação de arrays multidimensionais (listas dentro de uma lista)
+    array['array1'] = Array('objeto')
+    array['array2'] = Array('objeto')
+lista.push('objeto3', 'objeto4') 	--> Adiciona elementos ao final do array lista
+lista.unshift('objeto3', 'objeto4')	--> Adiciona elementos no começo do array lista
+lista.pop()		 --> Remove o elemento do final do array lista
+lista.shift()		 --> Remove o elemento do começo do array lista
+lista.indexOf('objeto1') --> Faz uma pesquisa no array lista e retorna a posição do objeto
+lista.sort() 		 --> Retorna os valores do array lista em ordem alfabética
+
+function ordemNum(a, b) {	--> Função para ordenar numeros corretamente com sort()
+    return a - b
+}
+lista_numeros.sort(ordemNum)
+
+Estrutura de repetição:
+while(condição) {} --> Repete enquanto uma condição não for cumprida
+break		   --> Interrompe uma ação (if, switch, while)
+continue	   --> Continua a ação (if, switch, while)
+do {comandos} while (condicao) --> Repete os comantos pelo menos uma vez e até que a condição seja cumprida
+for(variavel; condicao; controle) {} --> Estrutura de repetição
+for(var x in variavel_array) ()	     --> Laço utilizado para varrer um array até sua ultima posição (onde o valor de x é a chave na posição atual do array)
+variavel_array.forEach(function(valor, indice, array){ --> Função que varre o array
+    document.write(indice + ' ' + valor + '<br>')
+})
+
+function funcao() { arguments } --> Objeto arguments da função é como se fosse um array que guarda os parametros passados pra função no momento da chamada da mesma
+
+Tratamento de erros:
+try {}		--> Bloco que contém o código a ser testado (tente)
+catch(erro) {} 	--> Bloco que contém a tratativa do erro (pegar)
+finally {} 	--> Bloco que contém o final dessa operação (finalizar)
+throw new Error('Houve um erro') --> Modifica o erro para que seja mais amigável ao usuário
+
+BOM:
+
+window.open(URL, name, specs, replace) --> Abre uma janela pop-up
+janela.close() --> Fecha a janela se a mesma estiver dentro de uma variavel
+window.print() --> Inicia a impressão da página
+window.innerHeight 		--> Retorna a altura atual da pagina
+window.innerWidth		--> Retorna a largura atual da pagina
+window.screen.availHeight  	--> Retorna a altura da pagina (excluindo a barra)
+window.screen.availWidth   	--> Retorna a largura da pagina (excluindo a barra)
+window.screen.heght	   	--> Retorna a altura da tela
+window.screen.width	   	--> Retorna a largura da tela
+window.location.href		--> Retorna toda a URL da página
+window.location.search		--> Retorna apenas os parametros da pagina (?parametro)
+window.location.href="URL" 	--> Redireciona a pagina para a url especificada
+window.location.reload()   	--> Atualiza a pagina atual
+setTimeOut(acao, tempo em ms) 	--> Executa uma ação após o tempo apenas uma vez
+clearTimeOut(variavel acao) 	--> Limpa o tempo percorrido até a ação
+setInterval(acao, tempo em ms) 	--> Executa uma ação após o tempo e continua
+clearInterval(variavel acao)	--> Limpa o tempo percorrido até a próxima ação
+
+*****ES6*****
+
+let nome = ''	--> Cria uma variavel let, que preserva o escopo que foi criada, não podendo ser utilizada fora do mesmo
+const NOME = ''	--> Cria uma variavel constante, seu valor nunca pode ser modificado e deve ser sempre atribuido em sua criação
+`Hello ${nome}, how are you?`	--> Template string, metodo de concatenação de strings com variaveis (` --> crase)
+function calculo(numero = 1, conta = +){}	--> Definição de valores default para uma função, caso nenhum parametro seja atribuido em sua chamada, os valores assumirão os defaults
+calculo(undefined, *)	--> A função assumirá o primeiro valor como default(1) e o segundo como o especificado(*)
+let calculo = (parametro) => {codigos}	--> Função criada utilizando arrow function
+
+*****Orientação a Objetos (OO)*****
+
+Pilar da Abstração
+
+	Entidade:	
+		Carro/ Sonho / ContaBancária --> Objetos da vida real trazidos para a aplicação
+	Identidade:
+		x = new Carro()/ y = new Sonho() / z = new ContaBancaria() --> Identidade única de cada objeto, aquilo de diferenciará um objeto de outro semelhante
+	Caracteristicas:
+		marca, modelo, cor/ tipo, historia / agencia, conta, saldo, limite --> Características que aquele objeto possui que são importantes para a aplicação/negócio
+	Ações:
+		ligar, desligar, acelerar / exibirHistoria / sacar, depositar, consultarSaldo --> Tipos de ações que cada objeto pode tomar que são necessarias para a aplicação/negócio
+
+Pilar do Encapsulamento
+
+	Tornar um atributo do objeto privado:
+		this._atributo1 --> Atributo privado
+		this.atributo2  --> Atributo público
+	Acessar um atributo privado através do metodo get:
+		get atributo1() {
+			return this._atributo1
+		}
+	Modificar um atributo privado através do metodo set:
+		set atributo1(valor) {
+			this._atributo1 = valor
+		}
+		objeto.atributo1 = 5 --> O valor 5 será passado como parametro para o metodo set
+
+Pilar da Herança
+
+	Superclasse/Classe Pai:
+		Criar uma super classe ou classe pai com atributos e metodos que serão herdados por todas as classes filhas ou subclasses. (class Animal)
+	Subclasse/Classe filha:
+		Na criação das classes filhas ou subclasses que herdarão os atributos e metodos da superclasse, utilizar o extends na frente do nome da classe e em seguida o nome da classe pai. (class Cachorro extends Animal)
+	Super():
+		No constructor das subclasses, utilizar o operador super() para identificar que serão herdados atributos de fora. (constructor() { super() })
+	Metodos:
+		Os metodos são herdados automaticamente, podendo ser utilizados por ambas as classes filhas em sua chamada.
+	Cascata:
+		Os atributos e metodos passados da classe pai para a classe filha tambem podem ser passados adiante para outras classes filhas e assim sucessivamente.
+	Opearador super():
+		Fornece acesso das classes filhas ao constructor da classe pai. Sempre incluso no constructor das classes filhas. É possível passar parâmetros pelo super() que serão acessador pelo constructor() da classe pai que está sendo herdada.
+
+Pilar do Polimorfismo
+
+	Sobreposição de métodos: As classes filhas herdam todos os metodos das classes pais, porém, se um método for escrito na classe filha que tenha seu nome idêntico a um método da classe pai, esse método será sobreescrito pela classe filha, ou seja, em sua chamada o que valerá será o método criado na classe filha.
+
+let produto = {			--> Criar um objeto literal/estático
+	descricao: 'Notebook',	--> Atributo/chave/nome => Valor (separados por ,)
+	preco: 1500
+	verDescricao: function() { ... }	--> Método do objeto
+}
+produto.verDescricao()		--> Chama um metodo do objeto literal
+
+Versao enxuta (Melhoria ES6):
+let formulario = {
+	nome,	--> nome do atributo = nome da variavel / valor do atributo = valor da variavel
+	idade,
+	sexo,
+	verResumo() { ... }
+}
+formulario.verResumo()
+
+formulario.nome = 'Renato'			--> Modifica o valor do atributo especificado
+formulario.profissao = 'Programador'		--> Inclusão de um novo atributo e valor ao objeto formulario
+formulario.exibirResumo = () => console.log() 	--> Inclusão de um novo metodo e função ao objeto formulario

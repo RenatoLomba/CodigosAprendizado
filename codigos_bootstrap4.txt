@@ -1,0 +1,294 @@
+Bootstrap 4
+
+class="h1" --> Aplica a formatação do h1-6 a qualquer elemento (1-6)
+class="display-1" --> Aplica uma formatação com maior destaque para títulos (1-4)
+class="lead" --> Aplica uma formatação de destaque a um texto
+class="text-monospace" --> Aplica uma formatação monospace (todos os caracteres com o mesmo tamanho)
+class="font-weight-bold" --> Aplica uma formatação negrito ao texto
+class="font-weight-normal" --> Texto normal
+class="font-italic" --> Texto itálico
+class="text-uppercase" --> Todas as letras maiúsculas
+class="text-lowercase" --> Todas as letras minúsculas
+class="text-capitalize" --> Primeiras letras maiúsculas
+class="text-right" --> Alinha a direita
+class="text-left" --> Alinha a esquerda
+class="text-center" --> Centraliza
+class="text-justify" --> Texto Justificado
+class="text-truncate" --> Corta parte do texto para melhor visualização
+class="text-primary" --> Azul
+class="text-secondary" --> Cinza
+class="text-success" --> Verde
+class="text-info" --> Azul aqua
+class="text-warning" --> Amarelo alaranjado
+class="text-danger" --> Vermelho
+class="text-light" --> Cinza bem claro
+class="text-dark" --> Cinza escuro
+class="text-white" --> Brando
+class="text-black-50" --> Preto transparência de 50%
+class="text-white-50" --> Branco transparência de 50%
+class="bg-primary"
+class="bg-secondary"
+class="bg-success"
+class="bg-info"
+class="bg-warning"
+class="bg-danger"
+class="bg-light"
+class="bg-dark"
+class="bg-white"
+class="bg-transparent" --> Transparente
+<blockquote class="blockquote"></blockquote> --> Cria um bloco de citação formatado
+    <blockquote class="blockquote"> --> Crio um bloco de citação com rodapé
+        <p>Lorem Ipsum</p>
+        <footer class="blockquote-footer">por
+            <cite>Renato Lomba<cite>
+        </footer>
+    </blockquote>
+class="list-unstyled" --> Lista sem estilo
+class="list-inline" --> Lista inline (itens um do lado do outro)
+    class="list-inline-item" --> Item da lista inline
+Sufixos de tela:    SM --> Small (tela de celular: >=576px)
+                    MD --> Medium (tela de tablet: >=768px)
+                    LG --> Large (tela de notebook: >=992px)
+                    XL --> Extra Large (tela de monitor: >=1200px)
+class="text-<tela>-<alinhamento>" --> Classe de alinhamento responsivo (tela= sm, md, lg, xl; alinhamento= left, center, right;)
+class="d-inline" --> Transforma um elemento block em inline
+class="d-block" --> Transforma um elemento inline em block
+class="d-inline-block" --> Elemento híbrido, com ambos os comportamentos
+class="float-left" --> Flutua elementos a esquerda
+class="float-right" --> Flutua elementos a direita
+class="float-none" --> Elemento sem flutuação
+class="clearfix" --> Corrige os elementos flutuantes em uma caixa (aplicado no conteiner pai dos elementos flutuantes)
+class="fixed-top" --> Fixa um elemento no topo da página, acima de todos os outros
+class="fixed-bottom" --> Fixa um elemento na base da página, abaixo dos outros
+class="sticky-top" --> Cola um elemento no topo da página quando o mesmo alcança o topo na rolagem
+Sufixos de margem:  mt --> Margin Top
+                    mb --> Margin Bottom
+                    ml --> Margin Left
+                    mr --> Margin Right
+                    mx --> Margin no eixo x (esquerda e direita)
+                    my --> Margin no eixo y (cima e baixo)
+                    m --> Margin em todos os lados
+            Valor a definir (0 até 5)
+Ex.
+    class="mt-2" --> Margem no topo 2
+    class="mr-5" --> Margem direita 5
+Sufixos de padding: pt --> Padding Top
+                    pb --> Padding Bottom
+                    pl --> Padding Left
+                    pr --> Padding Right
+                    px --> Padding no eixo x
+                    py --> Padding no eixo y
+                    p --> Padding em todos os lados
+            Valor a definir (0 até 5)
+Ex.
+    class="pt-2" --> Padding no topo 2
+    class="px-5" --> Padding na esquerda e direita 5
+class="w-25" --> Width de 25% do tamanho total da caixa
+class="w-50" --> Width de 50%
+class="w-75" --> Width de 75%
+class="w-100" --> Width de 100%
+class="w-auto" --> Width automática
+class="h-25" --> Height de 25% do tamanho total da caixa
+class="h-50" --> Height de 50%
+class="h-75" --> Height de 75%
+class="h-100" --> Height de 100%
+class="h-auto" --> Height automática
+class="border" --> Todas as bordas
+class="border-top" --> Borda superior
+class="border-bottom" --> Borda inferior
+class="border-left" --> Borda esquerda
+class="border-right" --> Borda direita
+class="border-success" --> Aplica uma cor na borda (Ex. primary, secondary, success, info, warning, danger, light, dark, white)
+    Ex. class="border-top border-dark" --> Aplica uma borda superior com cor dark
+class="rounded" --> Arredondamento
+class="rounded-top" --> Arredondamento superior
+class="rounded-bottom" --> Arredondamento inferior
+class="rounded-left" --> Arredondamento esquerdo
+class="rounded-right" --> Arredondamento direito
+class="rounded-circle" --> Arredondamento máximo (círculo perfeito)
+Media types:
+    all --> Todos os dispositivos
+    aural --> Sintetizadores de voz
+    braille --> Leitores de Braille
+    embossed --> Impressoras de Braille
+    handled --> Dispositivos de mão (celulares com telas pequenas)
+    print --> Impressoras convencionais
+    projection --> Apresentações de slides
+    screen --> Monitores coloridas
+    tty --> Teleimpressoras e terminais
+    tv --> Televisores
+Ex.
+    <link rel="stylesheet" type="text/css" media="print" href="estilo-impressao.css"> --> Define o estilo css usado na hora de imprimir a página
+@media (<condição>) {formatação CSS} --> Criação de Media Queries
+class="btn" --> Aplica uma formatação de botão
+class="btn btn-primary" --> Aplica uma cor ao botão (primary, secondary, success, info, warning, danger, light, dark, link)
+class="btn btn-outline-primary" --> Botão com borda
+class="btn btn-lg" --> Botão grande
+class="btn btn-sm" --> Botão pequeno
+class="btn btn-block" --> Botão em forma de bloco
+class="btn active" --> Botão ativo (que ja foi clicado)
+class="btn disabled" --> Botão inativo (não se pode clicar)
+class="btn" data-toggle="button" --> Botão alterna do estado normal para active quando clicado
+class="btn-group" --> Quando aplicado num container com varios botoes dentro, o mesmo agrupa todos eles
+class="btn-group-vertical" --> Grupo de botões na verticail
+class="btn-toolbar" --> Quando aplicado num container pai com varios grupos de botões dentro, ele agrupa esses grupos
+Botão Dropdown (links escondidos que só aparece quando clicarmos no botão):
+    <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown">
+            Clique
+        </button>
+        <div class="dropdown-menu">
+            <a href="#" class="dropdown-item">Link 1</a>
+            <div class="dropdown-divider"></div>
+            <a href="#" class="dropdown-item">Link 2</a>
+            <div class="dropdown-divider"></div>
+            <a href="#" class="dropdown-item">Link 3</a>
+        </div>
+    </div>
+class="nav" --> Define uma <ul> como navegação
+    class="nav-item" --> Define um <li> como item da barra de navegação
+    class="nav-link" --> Define um <a> como link da barra de navegação
+    class="nav-link active" --> Define o link como ativo (atual)
+    class="nav-link disabled" --> Define o link como inativo (não pode clicar)
+    class="nav nav-pills" --> Define um tipo de navegação com links arredondados
+    class="nav nav-tabs" --> Define um tipo de navegação como abas
+    class="nav justify-content-center" --> Define um alinhamento centro na barra
+    class="nav justify-content-end" --> Define um alinhamento a direita na barra
+    class="nav flex-column" --> Define a barra como blocos que ocupam toda a tela
+class="navbar" --> Define uma <nav> como barra de navegação
+class="navbar-nav" --> Define uma barra de navegação que esta dentro de uma <nav>
+class="navbar navbar-expand-sm" --> Barra de navegação formatada para small (sm, md, lg, xl)
+class="navbar-brand" --> Formata o elemento como logo
+class="navbar navbar-light" --> Define uma cor de para a barra de nav (dark/light)
+    class="navbar navbar-light bg-light" --> Define o bg da barra (dark, light, primary, secondary, success, info, warning, danger)
+class="navbar fixed-top" --> Barra fixa no topo
+class="navbar fixed-bottom" --> Barra fixa na base
+class="navbar sticky-top" --> Barra gruda quando chega ao topo
+Ex. 
+    <ul class="nav nav-tabs justify-content-end">
+        <li class="nav-item"><a class="nav-link active">Home</a></li>
+        <li class="nav-item"><a class="nav-link disabled">Sobre</a></li>
+    </ul>
+class="list-group" --> Formatação para listas <ul>
+    class="list-group-item" --> Formatação para itens de listas <li>
+class="list-group list-group-flush" --> Formatação mais simples de lista
+class="list-group-item list-group-item-primary" --> Altera a cor do item pra primary (secondary, success, info, warning, danger, light, dark)
+class="list-group-item active" --> Item ativo
+class="list-group-item disabled" --> Item inativo
+class="badge badge-primary" --> Cria um pequeno marcador colorido na tag <span> (primary. secondary, success, info, warning, danger, light, dark)
+<ol class="breadcrumb"> --> Cria uma guia de páginas para facilitar a navegação 
+        <li class="breadcrumb-item">
+            <a href="#">Home</a>
+        </li>
+        <li class="breadcrumb-item">
+            <a href="#">Usuários</a>
+        </li>
+        <li class="breadcrumb-item active">Jamilton Damasceno</li>
+    </ol>
+class="form-group" --> Formatação para uma <div> dentro de um <form>
+    class="form-control" --> Formatação para <input> dentro da <div> do <form>
+    class="form-control form-control-sm" --> Formatação small
+    class="form-control form-control-lg" --> Formatação large
+class="form-control-file" --> Formatação para <input type="file"> de arquivos
+class="form-text" --> Formatação para textos dentro de um formulário
+class="custom-file" --> Formatação para input type=file customizada
+    class="custom-file-label" --> Formatação para o <label> do custom-file
+    class="custom-file-input" --> Formatação para o <input> do custom-file
+class="custom-range" --> Formatação para o <input type="range">
+class="form-inline" --> Formata um <form> como inline
+class="form-control is-valid" --> Campo fica verde indicando que é valido
+    class="valid-feedback" --> Mensagem de informação válida <div>
+class="form-control is-invalid" --> Campo fica vermelho indicando que é invalido
+    class="invalid-feedback" --> Mensagem de informação invalida <div>
+class="input-group" --> Formatação para um grupo de <input> dentro de uma <div>
+    class="input-group-prepend" --> Tipo de input prepend (antes da caixa)
+    class="input-group-append" --> Tipo de input append (depois da caixa)
+        class="input-group-text" --> Formatação customizada para o texto
+class="alert alert-primary" --> Formatação de um alerta <div> (primary, secondary, info, success, warning, danger, light, dark)
+class="alert alert-dismissible" --> Formatação de um alerta que possa ser fechado
+    class="close" data-dismiss="alert" --> Formatação de um botão de fechar <button>
+class="progress" --> Formatação de progresso
+    class="progress-bar" --> Barra de progresso
+    class="progress-bar w-25" --> Barra em 25% (w-25, w-50, w-75, w-100)
+    class="progress-bar bg-primary" --> Altera a cor da barra (primary, secondary, success, info, warning, danger, light, dark)
+    class="progress-bar" style="height: 2px;" --> Altera a altura da barra
+    class="progress-bar progress-bar-striped" --> Barra de progresso listrada
+    class="progress-bar progress-bar-striped progress-bar-animated" --> Barra de progresso animada
+class="table" --> Formatação para tabelas <table>
+    class="table table-dark" --> Tabela escura
+    class="thead-dark" --> Apenas o cabeçalho <thead> da tabela fica escuro
+    class="table table-striped" --> Tabela listrada
+    class="table table-bordered" --> Tabela bordeada
+    class="table table-striped" --> Tabela sem borda
+    class="table-primary" --> Tabela de cor primary (primary, secondary, success, info, warning, danger, light, dark) <table>, <tr>
+    class="table table-sm" --> Tabela pequena
+    class="table-responsive" --> Quando aplicada numa <div> que contem uma <table>, aplica um efeito responsivo quando a tela é menor do que o conteúdo
+class="pagination" --> Formatação de barra de paginação de tabela <ul>
+    class="pagination justify-content-center" --> Alinha a barra de pag. ao centro
+    class="pagination justify-content-end" --> Alinha a barra de pag. a direita
+    class="pagination pagination-sm" --> Tamanho da barra small
+    class="pagination pagination-lg" --> Tamanho da barra large
+        class="page-item" --> Item da página <li>
+            class="page-link" --> Link da página <a>
+            <span>&laquo;</span> --> Cria uma setinha apontando pro lado esquerdo
+            <span>&raquo;</span> --> Cria uma setinha apontando pro lado direito
+class="sr-only" --> Elemento só aparecerá para leitores de tela
+class="card" --> Formatação de cartão <div>
+    class="card-body" --> Formatação do corpo do cartão <div><div>
+    class="card-title" --> Título do cartão <h4>
+    class="card-subtitle" --> Subtítulo do cartão <h6>
+    class="card-text" --> Conteúdo do cartão <p>
+    class="card-img" --> Imagem no cartão <img>
+    class="card-img-top" --> Imagem no topo do cartão <img>
+    class="card-img-overlay" --> Conteúdo sobreescrevendo a imagem <div>
+    class="card-img-bottom" --> Imagem na base do cartão <img
+    class="card-header" --> Cabeçalho do cartão <div>
+    class="card-footer" --> Rodapé do cartão <div>
+    class="card text-center" --> Alinha o conteúdo do cartão ao centro (left, center, right)
+    class="card-header-tabs" --> Navegação do cartão <ul>
+    class="card bg-primary" --> Cartão com cor de fundo
+    class="card border-primary" --> Cartão com borda
+    class="card-columns" --> Cria um conteiner de cartões que ficarão alinhados em colunas <div>
+class="jumbotron" --> Cria uma área de destaque no site
+class="media" --> Estrutura para imagem <div>
+    class="media-body" --> Corpo da estrutura <div>
+    class="align-self-start" --> Alinha a <img> no começo da <div>
+    class="align-self-center" --> Alinha a <img> no centro da <div>
+    class="align-self-end" --> Alinha a <img> no final da <div>
+class="container" --> Cria o container principal do site que se adapta a cada dispositivo no sistema de Grid (sm=576px, md=768px, lg=992px, xl=1200px)
+    class="row" --> Cria uma linha dentro do container no sistema de Grid
+        class="col-12" --> Define o tamanho da coluna com base no sistema Grid (12 colunas máximas) em uma linha do Grid (1-12)
+        class="col-sm-12" --> Define o tamanho da coluna com base no tamanho da tela (sm, md, lg, xl)
+        class="col-md-6 d-none d-md-block" --> Conteúdo só aparecerá em tamanho de tela maior que md, caso contrário ficará escondido pro usuário
+        class="col" --> Tamanho fixo para todas as colunas
+        class="order-1" --> Define a ordem em que as colunas aparecerão (order-1 aparecerá primeiro e assim por diante)
+        class="offset-sm-3" --> Define um espaçamento de colunas (1-12) à esquerda do elemento dependendo do tamanho da tela (sm, md, lg, xl)
+    class="row align-items-center" --> Alinha os items verticalmente y (start, center, end)
+    class="col align-self-center" --> Alinha apenas um item individualmente (start, center, end)
+    class="row justify-content-center" --> Alinha os itens horizontalmente x (start, center, end)
+    class="row justify-content-around" --> Distribuição dos itens no conteiner (around, between, end)
+    class="row no-gutters" --> Remove o espaçamento dos itens
+class="container-fluid" --> Container que ocupa todo o espaço da tela permanentemente
+class="d-flex" --> Crio um flex container <div>
+    class="d-felx flex-column" --> Conteiner em coluna
+    class="d-felx flex-column-reverse" --> Coluna ao inverso
+    class="d-flex flex-row" --> Container em linha
+    class="d-flex flex-row-reverse" --> Linha ao inverso
+    class="d-flex justify-content-center" --> Alinhamento horizontal x (start, center, end, around, between)
+    class="d-flex align-items-center" --> Alinhamento vertical y (start, center, end, baseline, stretch)
+    class="d-flex flex-wrap" --> Quebra os itens para baixo para que todos caibam na tela
+class="mr-auto" --> Margem right automatica
+class="ml-auto" --> Margem left automatica
+class="mb-auto" --> Margem bottom automatica
+class="mt-auto" --> Margem top automatica
+class="img-fluid" --> <img> responsiva dentro do container
+class="carousel slider" data-ride="carousel" --> Estrutura para criação de um slider carousel <div>
+    class="carousel inner" --> Dentro do Carousel <div>
+        class="carousel-item" --> Itens do Carousel <div>
+        class="carousel-item active" --> Primeiro item do Carousel <div>
+        class="carousel-control-prev" data-slide="prev" --> Cria um botão para retornar a imagem anterior <a>
+            class="carousel-control-prev-icon" --> Ícone de seta esquerda
+        class="carousel-control-next" data-slide="next" --> Cria um botão para avançar para a próxima imagem <a>
+            class="carousel-control-next-icon" --> Ícone de seta direita
+        class="carousel-indicators" --> Indicadores do carousel <ol>
+        class="carousel-caption" --> Define uma legenda para o carousel <div>

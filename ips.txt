@@ -1,0 +1,22 @@
+IPs
+
+Classe A: 1-126.0.0.0 255.0.0.0
+Classe B: 128-191.0.0.0 255.255.0.0
+Classe C: 192-223.0.0.0 255.255.255.0
+Classe D: 224-239.0.0.0 (Multicast)
+Classe E: 240-255 (Não utilizado)
+127.0.0.1 --> IP da placa local
+
+IP Privado
+
+Classe A: 10.x.x.x
+Classe B: 172.16.x.x-172.31.x.x
+Classe C: 192.168.x.x
+
+IPs Disponíveis
+
+172.16.0.0
+255.     255.     0.       0
+11111111.11111111.00000000.00000000
+(2^"quantidade de 0=16")-2 = 65.534
+

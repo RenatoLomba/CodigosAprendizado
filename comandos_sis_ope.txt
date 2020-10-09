@@ -1,0 +1,165 @@
+Comandos do Windows
+
+echo "texto" --> Escreve o texto
+dir --> Lista os diretórios da pasta
+cd --> Acessa um diretório
+mkdir --> Cria um diretório
+move "arquivo" "diretório" --> Move um arquivo
+type --> Abre o arquivo
+echo "texto" > "arquivo" --> Cria um arquivo
+copy --> Copia um arquivo
+rename --> Renomeia um arquivo
+del --> Apaga um arquivo
+cls --> Limpa a tela
+help --> Ajuda
+dir /O:S --> Ordena por tamanho
+dir /O:D --> Ordena por data
+dir /O:D C:\ --> Mostra os arquivos do diretório C: por data
+echo "novo texto" >> "arquivo" --> Adiciona um texto ao arquivo
+tree --> Mostra os diretórios em árvore
+more "arquivo" --> Mostra o texto do arquivo por partes
+rmdir --> Remove uma pasta
+echo "comando" > "arquivo.bat" --> Cria um script
+"arquivo.bat" --> Executa os comandos do script
+pause --> Comando que pausa o script até que o usuário tecle alguma coisa
+xcopy --> Copiar uma pasta
+xcopy /e --> Copia todo o conteúdo da pasta
+xcopy /e /y --> Sobreescreve o conteúdo
+echo %date% --> Data de hoje
+echo %time% --> Hora atual
+@echo off --> Na execução do script não aparece os códigos echo, apenas o texto
+echo %PATH% --> Mostra o conteúdo da variavel PATH
+set PATH=%PATH%;"C:\caminho do arquivo" --> Colocar um diretório no PATH
+set "NOME"="C:\caminho" --> Cria uma variável
+cd %"NOME"% --> Entra na variável
+setx PATH "%PATH%;C:\caminho" /M --> Altera a variável permanentemente
+choco --> Abre o chocolatey
+choco install --> Instala um pacote
+choco list -l --> Lista os pacotes instalados
+dcpromo --> Instala ou desinstala os serviços do AD no Windows Server
+dnscmd /info --> Verifica as configurações do DNS
+start "pasta" --> Acessa uma pasta compartilhada dentro do Windows Server
+
+Comandos no Linux
+
+pwd --> Diretório atual
+cat --> Lê o arquivo
+ls -al --> Lista arquivos ocultos
+ls * --> Mostra o conteudo atual e de subpastas
+whoami --> Mostra o usuário atual
+rmdir --> Remove uma pasta
+rm --> Remove um arquivo
+rm -r --> Remove uma pasta e seu conteudo
+cat "texto?.txt" --> Lê os arquivos com número
+cat "texto*.txt" --> Lê todos os arquivos
+mv "arquivo" "arquivo2" --> Muda o nome do arquivo
+cp -r --> Copia uma pasta e seus arquivos
+touch --> Toca um arquivo alterando a data de modificação
+date --> Mostra a data
+head "texto.txt" --> Mostra apenas o cabeçalho do arquivo
+tail "texto.txt" --> Mostra apenas o rodapé do arquivo
+less "texto.txt" --> Mostra o arquivo por partes
+zip -r "nome.zip" "pasta/arquivo" --> Cria um arquivo ZIP
+unzip -l "nome.zip" --> Mostra o conteúdo do arquivo ZIP
+unzip "nome.zip" --> Descompacta o arquivo
+tar -vcz "pasta" > "nome.tar.gz" --> Cria um arquivo TAR GZ
+tar -vxz < "nome.tar.gz" --> Descompacta o arquivo TAR GZ
+tar -cjf "nome.tar.bz2" "pasta" --> Cria um arquivo TAR BZ2
+tar -xjf "nome.tar.bz2" --> Descompacta o arquivo TAR BZ2
+cat /proc/meminfo --> Mostra informações de memória do sistema
+ps -ef --> Lista os processos rodando no Linux
+kill "PID" --> Mata o processo
+kill -9 "PID" --> Força a morte do processo
+STOP "PID" --> Interrompe um processo
+CONT "PID" --> Retorna um processo ao funcionamento
+to/htop --> Gerenciador de tarefas do Linux (PID=Identificação do processo | user=Usuário | PRI=Prioridade | NI=Ordem da prioridade | %CPU=Consumo do processador | %MEM=Consumo de RAM | TIMET=Tempo de execução do processo | Command=Caminho do processo
+killall "Nome do processo" --> Mata todos os processos com o nome referente
+pstree --> Mostra os processos em árvore
+jobs --> Mostra os processos parados
+bg --> Manda um processo rodar em background
+fg --> Manda um processo rodar em foreground
+"Nome do processo" & --> Abre o processo já em background
+sh --> Executa um script
+./ --> Executar script/arquivo com permissões de execução
+locate "arquivo" --> Localiza o arquivo ou programa
+which "programa" --> Localiza o programa em especifico
+root$ updatedb --> Atualiza os dados no banco de dados de programas do Linux
+echo $PATH --> Mostra as pastas que estao no PATH
+env --> Mostra as variaveis de ambiente
+env | grep PATH --> Mostra a variavel PATH
+PATH=$PATH:"caminho" --> Adiciona uma pasta no PATH do Linux temporariamente
+mcedit .bashrc (ao final do documento, adicionar o comando PATH=$PATH:"caminho" <save>)  --> Adiciona uma pasta ao PATH permanentemente
+apt-cache search "nome do pacote" --> Busca numa lista o pacote referido
+sudo apt-get update --> Realiza a atualização dos dados dos pacotes
+sudo apt-get upgrade --> Realiza a atualização dos pacotes em si
+sudo apt-get intall ssh --> Instalar o SSH
+ssh "IP da máquina" | ssh -X "IP" --> Acesso remoto via SSH
+dpkg -i "nome do arquivo" --> Instala um pacote.deb
+dpkg -r "Nome do pacote" --> Remove o pacote
+cd /etc/init.d --> Diretório que contem os scripts e programas que inicializarão automaticamente quando a maquina iniciar
+./cofigure --> Análise de dependencias GIT
+sudo apt-get install zlibg-dev --> Instala o Zlib
+make --> comando de compilação
+sudo make install --> Instalar o GIT
+git --> Inicia o GIT
+sudo apt-get install mysql-server --> Instala o servidor MySQL no Linux
+sudo mysql_secure_installation --> Configura a segurança do servidor MySQL
+systemctl status mysql.service --> Verifica se o servidor MySQL esta ativo
+sudo mysql -u root --> Se conecta ao banco pelo terminal
+	mysql> "USE mysql;" --> Comando (banco) para poder utilizar o SQL pelo usuário root
+	mysql> "UPDATE user SET plugin='mysql_native_password' WHERE User='root';" --> Comando para preparar área de trabalho do banco para teste
+	mysql> "FLUSH PRIVILEGES;" --> Recarrega a tabela para atualizar as informações no banco
+service mysql restart --> Reinicia o servidor para atualizar as informações do banco
+systemctl restart mysql --> Reinicia o SQL para atualizar informações
+sudo /etc/init.d/postgresql restart --> Reinicia o PostgreSQL
+sudo -u postgres psql --> Inicia a configuração do PostgreSQL
+	postgres=# "alter user postgres with encrypted password 'postgres';" --> Altera a senha do usuário postgres para 'postgres'
+sudo /opt/lampp/manager-linux-x64.run --> Inicia o LAMPP (Servidor HTTP local)
+sudo pip3 install django --> Biblioteca para aplicações WEB (Django)
+sudo pip3 install django-adminlte2 --> 
+django-admin startproject "sistema" --> Inicia um projeto no Django com o nome escolhido
+django-admin startapp "core" --> Cria um diretorio de inicialização com o nome escolhido
+python3 manage.py runserver --> Inicia o aplicativo Django
+python3 manage.py migrate --> Cria/atualiza o banco de dados para usuários do aplicativo
+python3 manage.py createsuperuser --> Cria um usuário administrador do aplicativo
+python3 manage.py makemigrations --> Cria atualizações no migrate, importante depois que fez qualquer auteração no banco
+
+Linux - Usuários/Arquivos
+
+useradd -m "renato" --> Cria usuário
+chmod o-rx "renato" --> Remove permissão de leitura e execução para outros
+passwd "renato" --> Senha usuário
+useradd -a -G sudo "renato" --> Adiciona usuário ao sudo
+chsh -s /bin/bash "renato" --> Altera o shell  
+groupadd "renato" --> Adiciona grupo
+groups "renato" --> Ver os grupos
+cat /etc/shadow --> Arquivo de senhas
+gpasswd -a "renato" "ti" --> Adiciona "renato" para o grupo "ti"
+chmod 750 "arquivo" --> Altera permissões de arquivo
+chmod +rwx "arquivo" --> Altera permissões de arquivo para todos (r=read | w=write | x=execute)
+chmod -rwx "arquivo" --> Remove permissões de arquivo
+chmod u+rwx "arquivo" --> Altera permissões de arquivo para o usuário dono
+chmod g+rwx "arquivo" --> Altera permissões de arquivo para o grupo
+chmod o+rwx "arquivo" --> Altera permissões de arquivo para outros
+chown "renato" "arquivo" --> Muda dono do arquivo
+deluser "renato" --> Apaga o usuário
+groupdel "renato" --> Apaga o grupo
+rm -r "renato" --> Apaga o diretório
+sudo passwd --> Altera a senha do usuario root
+root~$ passwd "usuário" --> Muda a senha para o usuário especificado
+
+IP Tables
+
+root@~#iptables -L --> Lista as regras configuradas no iptables
+root@~#iptables -A "INPUT/OUTPUT/FORWARD" -p "protocolo" -s "origem" -d "destino" --dport "porta de comunicação" -j "ACCEPT/DROP" --> Adicionar regras no iptables
+root@~#iptables -F --> Remove todas as regras criadas
+root@~#iptables -L -v --> Lista detalhada das regras
+root@~#iptables -D "INPUT/OUTPUT/FORWARD" "1/2/3" --> Apaga um regra de acordo com sua ordem
+root@~#iptables -I "INPUT/OUTPUT/FORWARD" "1/2/3" " " " " " --> Adiciona uma regra em uma determinada ordem
+root@~#iptables -A INPUT -m state --ESTABLISHED,RELATED -j ACCEPT --> Permite que todos os acessos que ja foram permitidos antes possam passar sempre (1º)
+root@~#iptables -A INPUT -i lo -j ACCEPT --> Permite qualquer conexão vinda do IP de loopback (2º)
+root@~#iptables " " " " " --dport 22 -j LOG --< Log para porta SSH (deve vir antes da regra do SSH)
+root@~#iptables -P INPUT DROP --> Mudar a politica do iptables pra sempre dropar pacotes suspeitos
+root@~#iptables-save > "arquivo" --> Salva as regras rodando no momento
+root@~#iptables-restore < "arquivo" --> Restaura as regras salvas
+root@~#sudo apt-get install iptables-persistent --> Roda e salva as regras do iptables
