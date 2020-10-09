@@ -1,4 +1,4 @@
-*****JavaScript*****
+﻿*****JavaScript*****
 
 //comentário de uma linha
 /* comentário de múltiplas linhas
@@ -280,3 +280,8 @@ formulario.verResumo()
 formulario.nome = 'Renato'			--> Modifica o valor do atributo especificado
 formulario.profissao = 'Programador'		--> Inclusão de um novo atributo e valor ao objeto formulario
 formulario.exibirResumo = () => console.log() 	--> Inclusão de um novo metodo e função ao objeto formulario
+
+let Carro = function() {			--> Crio uma função construtora que atua como se fosse uma classe
+	this.cor = 'Amarelo'
+	this.getCor = function() {}
+}
