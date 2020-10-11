@@ -285,3 +285,5 @@ let Carro = function() {			--> Crio uma função construtora que atua como se fo
 	this.cor = 'Amarelo'
 	this.getCor = function() {}
 }
+
+__proto__: objetoherdado			--> Object.prototype estabele uma relação de herança em objetos literais, funções construtoras e classes
