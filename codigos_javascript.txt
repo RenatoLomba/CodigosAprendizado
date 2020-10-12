@@ -286,4 +286,6 @@ let Carro = function() {			--> Crio uma função construtora que atua como se fo
 	this.getCor = function() {}
 }
 
-__proto__: objetoherdado			--> Object.prototype estabele uma relação de herança em objetos literais, funções construtoras e classes
+__proto__: objetoherdado			--> Estabele uma relação de herança em objetos literais, funções construtoras e classes
+Object.prototype				--> Através do Object.prototype.nome_do_atributo, todos os objetos da aplicação herdarão este atributo pois todos os objetos herdam de Object
+...lista					--> Operador spread usado para espalhar os dados contidos em uma variavel, array ou objeto para outro
