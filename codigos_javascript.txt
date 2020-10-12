@@ -290,3 +290,4 @@ __proto__: objetoherdado			--> Estabele uma relação de herança em objetos lit
 Object.prototype				--> Através do Object.prototype.nome_do_atributo, todos os objetos da aplicação herdarão este atributo pois todos os objetos herdam de Object
 ...lista					--> Operador spread usado para espalhar os dados contidos em uma variavel, array ou objeto para outro
 ...parametro					--> Operador rest utilizado para juntar valores, como um conjunto de inteiros ou strings em um array ou como parametros para uma função
+let [a, b] = lista				--> Desestruturação do array lista, passando os valores de seus indices 0 e 1 para as variaveis passadas a e b
