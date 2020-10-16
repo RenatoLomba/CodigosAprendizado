@@ -293,3 +293,8 @@ Object.prototype				--> Através do Object.prototype.nome_do_atributo, todos os 
 let [a, b] = lista				--> Desestruturação do array lista, passando os valores de seus indices 0 e 1 para as variaveis passadas a e b
 let {descricao: d, preco: p} = produtos		--> Desestruturação do objeto produtos, passando os valores dos atributos descricao e preco para as variaveis d e p
 let {detalhes: {fabricante: f, modelo: m}}	--> Extraindo atributos de um objeto que esta dentro de um objeto
+
+localStorage.setItem()				--> Metodo utilizado para armazenar um objeto dentro do localStorage do navegador, passando como parametro (keyvalue = string, objeto = JSON)
+JSON.stringfy(objeto)				--> Metodo para transformar um objeto do JavaScript em um objeto JSON
+let objetoJSON = '{"nome": "Rnt", "id": "19"}'	--> Criar um objeto JSON, parecido com objeto literal, porém todo o conteúdo deve estar dentro de uma string
+JSON.parse(objetoJSON)				--> Converte um objeto JSON para um objeto JavaScript
