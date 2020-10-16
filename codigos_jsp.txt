@@ -1,0 +1,8 @@
+JSP (Java Server Pages)
+
+arquivo.jsp				--> Arquivo para utilizar o JSP no servidor WEB (Xampp ou Tomcat), deve estar na pasta webapps
+localhost:8080/pasta/arquivo.jsp	--> Acesso ao servidor WEB
+<% %>					--> Abre um bloco de JSP no HTML
+out.print("Aula 1")			--> Saída de texto pelo JSP
+out.print("<h1></h1>")			--> Pode-se utilizar tags na saída
+out.print(variavel)			--> Imprime o valor da variavel

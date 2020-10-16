@@ -1,0 +1,12 @@
+SQL - Linguagem de Consulta Estruturada
+-Linguagem Padrão do Banco de Dados Relacional
+-Dividida:
+  - DDL (Linguagem de Definição de Dados)
+    Comandos: CREATE, ALTER e DROP
+  - DML (Lingaugem de Manipulação de Dados)
+    Comandos: INSERT, UPDATE e DELETE
+    SELECT (Consulta)
+  - DCL (Linguagem de Controle de Dados)
+    Comandos: GRANT e REVOKE
+  - DTL (Linguagem de Transações de Dados)
+    Comandos: BEGIN, COMMIT e ROLLBACK
