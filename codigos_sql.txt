@@ -10,3 +10,10 @@ SQL - Linguagem de Consulta Estruturada
     Comandos: GRANT e REVOKE
   - DTL (Linguagem de Transações de Dados)
     Comandos: BEGIN, COMMIT e ROLLBACK
+
+- CHAR: para entradas de texto com comprimento fixo, como por exemplo, siglas de estados, CEP e números de CPF.
+- VARCHAR: para entradas de texto com comprimento variável, como Nome Completo, descrições de produtos.
+- DATE/TIME: para entradas contendo valor de data e hora.
+- FLOAT: para entradas que irão receber dados numéricos com precisão flutuante, como cálculo de taxas de juros e cálculos científicos.
+- BOOLEAN: para entradas que irão receber um valor verdadeiro ou falso
+- INTEGER: para entradas que irão receber dados numéricos inteiros.
