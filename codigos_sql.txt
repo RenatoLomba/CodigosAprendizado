@@ -2,7 +2,7 @@ SQL - Linguagem de Consulta Estruturada
 -Linguagem Padrão do Banco de Dados Relacional
 -Dividida:
   - DDL (Linguagem de Definição de Dados)
-    Comandos: CREATE, ALTER e DROP
+    Comandos: CREATE, ALTER, DROP, TRUNCATE e RENAME
   - DML (Lingaugem de Manipulação de Dados)
     Comandos: INSERT, UPDATE e DELETE
     SELECT (Consulta)
@@ -17,3 +17,28 @@ SQL - Linguagem de Consulta Estruturada
 - FLOAT: para entradas que irão receber dados numéricos com precisão flutuante, como cálculo de taxas de juros e cálculos científicos.
 - BOOLEAN: para entradas que irão receber um valor verdadeiro ou falso
 - INTEGER: para entradas que irão receber dados numéricos inteiros.
+
+-Primary Key: Chave primária (Numérica, NÃO NULA e sem duplicatas)
+-Foreign Key: Chave estrangeira (Primary key de outra entidade que se relaciona com esta)
+
+	CREATE DATABASE NOMEDOBANCO;	--> Cria um novo banco de dados
+	DROP DATABASE NOMEDOBANCO;	--> Deleta o banco de dados
+	CREATE TABLE NOMEDATABELA	--> Cria uma estrutura
+	(
+    		RA INT PRIMARY KEY AUTO_INCREMENT,
+    		NOME VARCHAR(50),
+    		EMAIL VARCHAR(50),
+    		DATA_NASCIMENTO DATE,
+    		ENDERECO VARCHAR(100),
+    		CEP CHAR(8),
+    		TELEFONE VARCHAR(15),
+    		CIDADE VARCHAR(50),
+    		ESTADO CHAR(2),
+    		ATIVO BOOLEAN
+	);
+	PRIMARY KEY			--> Indica a chave primária
+	AUTO_INCREMENT			--> Indica que é sequencial
+	DROP TABLE NOMEDATABELA;	--> Deleta uma estrutura
+	PRIMARY KEY (CODIGO_CURSO, CODIGO_ALUNO)	--> Indica que na estrutura há 2 chaves primarias de relacionamento em uma entidade associativa
+	CONSTRAINT fk_entidadeassociativa_tabela FOREIGN KEY (CHAVEESTRANGEIRA) REFERENCES (CHAVEPRIMARIANATABELARELACIONADA)	--> Crio um relacionamento entre uma entidade e uma entidade associativa
+	ALTER TABLE NOMEDATABELA ADD ELEMENTO	--> Altera a tabela após criada, adicionando algum elemento ou regra
