@@ -40,7 +40,7 @@ SQL - Linguagem de Consulta Estruturada
 	AUTO_INCREMENT			--> Indica que é sequencial
 	DROP TABLE NOMEDATABELA;	--> Deleta uma estrutura
 	PRIMARY KEY (CODIGO_CURSO, CODIGO_ALUNO)	--> Indica que na estrutura há 2 chaves primarias de relacionamento em uma entidade associativa
-	CONSTRAINT fk_entidadeassociativa_tabela FOREIGN KEY (CHAVEESTRANGEIRA) REFERENCES (CHAVEPRIMARIANATABELARELACIONADA)	--> Crio um relacionamento entre uma entidade e uma entidade associativa
+	CONSTRAINT fk_entidadeassociativa_tabela FOREIGN KEY (CHAVEESTRANGEIRA) REFERENCES NOMEDARABELA (CHAVEPRIMARIANATABELARELACIONADA)	--> Crio um relacionamento entre uma entidade e uma entidade associativa
 	ALTER TABLE NOMEDATABELA ADD ELEMENTO	--> Altera a tabela após criada, adicionando algum elemento ou regra
 	ALTER TABLE NOMEDATABELA DROP ELEMENTO	--> Remove um elemento da tabela
 	ALTER TABLE NOMEDATABELA MODIFY ELEMENT	--> Modifica um elemento da tabela
