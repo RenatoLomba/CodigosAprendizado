@@ -160,11 +160,12 @@ lista.pop()		 --> Remove o elemento do final do array lista
 lista.shift()		 --> Remove o elemento do começo do array lista
 lista.indexOf('objeto1') --> Faz uma pesquisa no array lista e retorna a posição do objeto
 lista.sort() 		 --> Retorna os valores do array lista em ordem alfabética
-
 function ordemNum(a, b) {	--> Função para ordenar numeros corretamente com sort()
     return a - b
 }
 lista_numeros.sort(ordemNum)
+lista.filter(f => f.salario < 1000)	--> Filtro do array que visa retornar um array menor atendendo as condicoes da funcao de callback no parametro
+lista.filter(f => f.salario > 1000).filter(f => f.status == 'ativo')	--> Múltiplos filtros para o array
 
 Estrutura de repetição:
 while(condição) {} --> Repete enquanto uma condição não for cumprida
