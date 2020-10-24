@@ -182,6 +182,18 @@ java.io
 	scanner.close()					--> Fecha o Scanner
 
 
+JSP (Java Server Pages)
+
+arquivo.jsp				--> Arquivo para utilizar o JSP no servidor WEB (Xampp ou Tomcat), deve estar na pasta webapps
+localhost:8080/pasta/arquivo.jsp	--> Acesso ao servidor WEB
+<% %>					--> Abre um bloco de JSP no HTML
+out.print("Aula 1")			--> Saída de texto pelo JSP
+out.print("<h1></h1>")			--> Pode-se utilizar tags na saída
+out.print(variavel)			--> Imprime o valor da variavel
+<form method="post" action="arquivo.jsp"></form>	--> Envia os dados do formulario da pagina HTML para o arquivo JSP
+nome = request.getParameter("nome")	--> Comando que pega o valor digitado dentro do input com o name="nome"
+
+
 JFrame "frame" = new JFrame("Geek University"); --> Cria uma tela desktop
 JPanel "panel" = new JPanel(); --> Crio um painel para a tela
 JButton "btn1" = new JButton("Seja Bem-vindo(a)"); --> Crio um elemento botão com o texto entre aspas
