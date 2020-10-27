@@ -1,0 +1,18 @@
+PHP
+
+<?php código ?>			--> Tag pagrão para embutir códigos PHP
+<?= código ?>			--> Tag de impressão utilizado apenas para impressão no documento
+echo('<h1>Teste</h1>')		--> Imprime no DOM da página HTML
+print('<h1>Teste</h1>')		--> Imprime no DOM da página e retorna um valor
+//comentario de 1 linha
+#comentario de 1 linha
+/*comentario de multiplas linhas*/
+
+$nome				--> Declaração de uma variavel ($)
+print($nome)			--> Imprime a variavel
+$nome = 'Renato'		--> Variavel tipo string
+$idade = 19			--> Variavel tipo int
+$peso = 68.5			--> Variavel tipo float
+$fumante = true			--> Variavel tipo true
+print('Olá ' . $nome . '!')			--> Concatenação utilizando o operador . (ponto)
+print("Olá $nome, você tem $idade anos")	--> Concatenação utilizando aspas duplas
