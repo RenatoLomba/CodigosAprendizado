@@ -28,7 +28,7 @@ SQL - Linguagem de Consulta Estruturada
     		RA INT PRIMARY KEY AUTO_INCREMENT,
     		NOME VARCHAR(50),
     		EMAIL VARCHAR(50),
-    		DATA_NASCIMENTO DATE,
+    		DATA_NASCIMENTO DATE, (YYYY/MM/DD)
     		ENDERECO VARCHAR(100),
     		CEP CHAR(8),
     		TELEFONE VARCHAR(15),
@@ -44,3 +44,13 @@ SQL - Linguagem de Consulta Estruturada
 	ALTER TABLE NOMEDATABELA ADD ELEMENTO	--> Altera a tabela após criada, adicionando algum elemento ou regra
 	ALTER TABLE NOMEDATABELA DROP ELEMENTO	--> Remove um elemento da tabela
 	ALTER TABLE NOMEDATABELA MODIFY ELEMENT	--> Modifica um elemento da tabela
+
+	INSERT INTO NOMEDATABELA (COLUNA1, COLUNA2...) VALUES (VALOR1, VALOR2...)	--> Insere dados em uma tabela
+	INSERT INTO TABELA (ID_AUTO_INCREMENT, COL2...) VALUES (null, VALOR2...)	--> Quando o campo tiver a propriedade AUTO_INCREMENT em sua criação, o valor deve ser nulo que ele irá se auto incrementar sozinho
+	INSERT INTO TABELA (COL2...) VALUES (VALOR2...)	--> Quando o campo que tiver a propriedade AUTO_INCREMENT não for especificado, ele se auto incrementará sozinho
+	UPDATE TABELA SET NOME='Renato' WHERE CHAVEPRIMARIA=1		--> Altera na tabela especificada os campos com os valores passados, filtrando pela chave primaria passada
+	UPDATE TABELA SET NOME='Renato' WHERE CP=1 OR CP=2		--> Altera na tabela o objeto com cp 1 OU cp2
+	UPDATE TABELA SET NOME='Renato' WHERE CP=1 AND CP=2		--> Altera na tabela o objeto com cp1 E cp2
+	DELETE FROM TABELA WHERE CP=1					--> Deleta uma linha da tabela, passando uma condição/filtro
+	SELECT * FROM TABELA WHERE CP>2					--> Seleciona e retorna os valores da tabela especificada, passando uma condição/filtro
+	SELECT CAMPO1, CAMPO2 FROM TABELA WHERE CP<2			--> Seleciona e retorna os valores dos campos da tabela especificada e filtrando pelo WHERE
