@@ -52,5 +52,17 @@ SQL - Linguagem de Consulta Estruturada
 	UPDATE TABELA SET NOME='Renato' WHERE CP=1 OR CP=2		--> Altera na tabela o objeto com cp 1 OU cp2
 	UPDATE TABELA SET NOME='Renato' WHERE CP=1 AND CP=2		--> Altera na tabela o objeto com cp1 E cp2
 	DELETE FROM TABELA WHERE CP=1					--> Deleta uma linha da tabela, passando uma condição/filtro
-	SELECT * FROM TABELA WHERE CP>2					--> Seleciona e retorna os valores da tabela especificada, passando uma condição/filtro
-	SELECT CAMPO1, CAMPO2 FROM TABELA WHERE CP<2			--> Seleciona e retorna os valores dos campos da tabela especificada e filtrando pelo WHERE
+	SELECT CAMPO FROM TABELA	--> Selecionar/Retornar valores de uma tabela
+	SELECT * FROM TABELA		--> Retorna todos os campos de uma tabela
+	WHERE				--> Filtro ONDE
+	DISTINCT			--> Usado para caso retornar linhas identicas, retorna apenas uma delas
+	VALOR1 > VALOR2			--> Operador de maior ou menor (<, >)
+	VALOR1 <> VALOR2		--> Operador de diferença
+	TABELA AS T, TABELA2 AS M	--> Atribui apelidos as tabelas
+	T.CAMPO, M.CAMPO		--> Acessa os valores de determinadas tabelas
+	ORDER BY CAMPO			--> Ordenação crescente
+	ORDER BY CAMPO DESC		--> Ordem decrescente
+	OR				--> Operador OU
+	IN (1,2,3)			--> Lista de valores
+	BETWEEN 10 AND 20		--> Entre os valores 10 e 20
+	LIKE '%@teste.com%'		--> LIKE usado para buscas aproximadas, onde tudo que estiver antes ou depois do % pode ser relativo, e o que estiver dentro deve conter
