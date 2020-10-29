@@ -66,3 +66,4 @@ SQL - Linguagem de Consulta Estruturada
 	IN (1,2,3)			--> Lista de valores
 	BETWEEN 10 AND 20		--> Entre os valores 10 e 20
 	LIKE '%@teste.com%'		--> LIKE usado para buscas aproximadas, onde tudo que estiver antes ou depois do % pode ser relativo, e o que estiver dentro deve conter
+	SELECT count(id) FROM TABELA	--> Retorna a quantidade de itens com id na tabela
