@@ -14,5 +14,22 @@ $nome = 'Renato'		--> Variavel tipo string
 $idade = 19			--> Variavel tipo int
 $peso = 68.5			--> Variavel tipo float
 $fumante = true			--> Variavel tipo true
-print('Olá ' . $nome . '!')			--> Concatenação utilizando o operador . (ponto)
-print("Olá $nome, você tem $idade anos")	--> Concatenação utilizando aspas duplas
+print('Olá ' . $nome . '!')		--> Concatenação utilizando o operador . (ponto)
+print("Olá $nome, você tem $idade anos")--> Concatenação utilizando aspas duplas
+define('NOME', 'Renato')		--> Crio uma constante, que nunca poderá ser mudada (nomedaconstante, valordaconstante)
+if(condicao) {logica} else {logica}	--> Operador de comparação if/else
+if(condicao) else if(condicao 2) else	--> Operador if/else if/else
+(condição) ? verdadeiro : falso		--> Operador ternário
+switch ($opcao) {			--> Operador condicional switch
+    case 1:
+	//codigo
+	break;
+    case 2:
+	//codigo
+	break
+    default:
+	//codigo
+	break
+}
+gettype($variavel)		--> Retorna o tipo da variável passada como parâmetro
+(double) $int			--> Realiza o casting de tipos
