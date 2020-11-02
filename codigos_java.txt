@@ -192,6 +192,13 @@ out.print("<h1></h1>")			--> Pode-se utilizar tags na saída
 out.print(variavel)			--> Imprime o valor da variavel
 <form method="post" action="arquivo.jsp"></form>	--> Envia os dados do formulario da pagina HTML para o arquivo JSP
 nome = request.getParameter("nome")	--> Comando que pega o valor digitado dentro do input com o name="nome"
+<%@page language="java" import="java.sql.*"%>	--> Comando para importar os pacotes para utilizar sql no java
+url = "jdbc:mysql://localhost:3306/" + banco;	--> Exemplo de url de banco de dados
+Connection conexao = conexao = DriverManager.getConnection( url , usuario , senha ) ;	--> Abre uma conexao com o bando de dados, passando a url, usuario e senha
+conexao.close()
+Statement stm = conexao.createStatement() ;	--> Abre um comando de ações no banco, como manipular os dados
+stm.close()
+stm.executeUpdate("comando SQL a ser executado") ;	--> Executa o comando passado no banco de dados
 
 
 JFrame "frame" = new JFrame("Geek University"); --> Cria uma tela desktop
