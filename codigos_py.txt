@@ -2,12 +2,13 @@
 
 print('Geek University') 	--> Printa na tela o que foi escrito (string)
 "nome" = 'Renato' 		--> Cria uma variável com nome "nome" e valor "Renato"
-print('{0}.format("nome")) 	--> Printa o valor da variavel "nome"
+print(nome) 			--> Printa o valor da variavel "nome"
+print(f"O nome é {nome}!")	--> Concatena uma frase com a variavel "nome"
 "numero" = 42 			--> Cria uma variável de nome "numero" e valor inteiro 42
 "numero" = numero + 58 		--> Somo o valor da variavel numero com 58 e guardo nela mesma
 for "n" in range(10): 		--> Abre um loop onde n vai de 0 até 10
 print('Estou imprimindo a variavel n: {0}'.format(n)) 	--> O loop vai me trazer todos os numeros na posição n (0-10)
 "nome" = input('Qual o seu nome? ') 			--> Pede para o usuário digitar um valor e o guarda na variavel nome
-print('Olá {0}'.format(nome))	 			--> Imprime o valor colocado na variavel nome
+"idade" = int(input("Informe sua idade: "))		--> Faz um casting de tipo para int
 type(variavel)						--> Retorna o tipo da variavel (int, str, float, bool)
 verificar = True/False		--> Variavel tipo booleana
