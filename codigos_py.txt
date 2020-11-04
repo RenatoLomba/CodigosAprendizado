@@ -1,14 +1,43 @@
 ﻿Linguagem Python
 
-print('Geek University') 	--> Printa na tela o que foi escrito (string)
-"nome" = 'Renato' 		--> Cria uma variável com nome "nome" e valor "Renato"
+# -*- coding: utf-8 -*-		--> Configura os charsets para utf-8 para acentuação
+print("Geek University") 	--> Printa na tela o que foi escrito (string)
+print("Olá, \nseja bem vindo!")	--> \n indica uma quebra de linha
+nome = 'Renato' 		--> Cria uma variável com nome "nome" e valor "Renato"
 print(nome) 			--> Printa o valor da variavel "nome"
 print(f"O nome é {nome}!")	--> Concatena uma frase com a variavel "nome"
-"numero" = 42 			--> Cria uma variável de nome "numero" e valor inteiro 42
-"numero" = numero + 58 		--> Somo o valor da variavel numero com 58 e guardo nela mesma
-for "n" in range(10): 		--> Abre um loop onde n vai de 0 até 10
-print('Estou imprimindo a variavel n: {0}'.format(n)) 	--> O loop vai me trazer todos os numeros na posição n (0-10)
-"nome" = input('Qual o seu nome? ') 			--> Pede para o usuário digitar um valor e o guarda na variavel nome
-"idade" = int(input("Informe sua idade: "))		--> Faz um casting de tipo para int
+nome = "Renato" + " " + "Lomba"	--> Concatenação de strings
+tamanho = len(nome)		--> Metodo len retorna a quantidade de caracteres em uma string
+min = nome.lower()		--> Metodo da string que deixa todos os caracteres minusculos
+max = nome.upper()		--> Metodo da string que deixa todos os caracteres maiusculos
+strip = nome.strip()		--> Metodo que remove espaços e caracteres especiais no inicio e final da string
+lista = conjunto.split()	--> Converte um conjunto de palavras ("Maçã Banana Limão Morango") em uma lista de objetos
+lista = conjunto.split("-")	--> Converte o conjunto em uma lista separando por - ("Maçã-Banana-Limão-Morango")
+busca = conjunto.find("Limão")	--> Retorna a posição de um caracter ou frase especifico ou -1 se não encontrar
+substituicao = conjunto.replace("Limão", "Pera")	--> Replace substitui a substring passada por outra em seguida
+letra = nome[0]			--> Retorna o caracter na posicao 0
+numero = 42 			--> Cria uma variável de nome "numero" e valor inteiro 42
+numero = numero + 58 		--> Somo o valor da variavel numero com 58 e guardo nela mesma
+nome = input("Qual o seu nome? ") 			--> Pede para o usuário digitar um valor e o guarda na variavel nome
+idade = int(input("Informe sua idade: "))		--> Faz um casting de tipo para int
 type(variavel)						--> Retorna o tipo da variavel (int, str, float, bool)
 verificar = True/False		--> Variavel tipo booleana
+#comentario			--> Coloca comentários na aplicação
+""comentario""				--> Comentários de multiplas linhas
+and	--> Operador lógico &&
+or	--> Operador lógico ||
+not	--> Operador lógico !
+if x < y:			--> Estrutura condicional IF
+    print("Verdadeiro")
+elif x == y:			--> Condicional ELSE IF
+    print("Iguais")
+else:				--> Condicional ELSE
+    print("Falso")
+
+while i < 5:			--> Laço de repetição while (enquanto)
+    print(i)
+    i+=1
+for n in range(10): 		--> Abre um loop onde n vai de 0 até 10
+    print(n)
+for n in lista:			--> Loop que varre todos os indices de um array/lista
+    print(n)
