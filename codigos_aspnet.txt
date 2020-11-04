@@ -1,0 +1,6 @@
+ASP.NET MVC
+
+Model		--> Responsável por manter os dados e lógica de negócio da aplicação (Back-end)
+View		--> É a interface com o usuário da app que exibe os dados (Front-end)
+Controller	--> Recebe e trata as requisições e renderiza a view apropriada com os dados (Front to Back/Back to Front)
+http://localhost/Home/Index	--> Home é o Controlador da apliação, e Index é uma ação do controlador que retorna uma resposta
