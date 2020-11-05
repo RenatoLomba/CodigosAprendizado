@@ -4,3 +4,16 @@ Model		--> Responsável por manter os dados e lógica de negócio da aplicação (Bac
 View		--> É a interface com o usuário da app que exibe os dados (Front-end)
 Controller	--> Recebe e trata as requisições e renderiza a view apropriada com os dados (Front to Back/Back to Front)
 http://localhost/Home/Index	--> Home é o Controlador da apliação, e Index é uma ação do controlador que retorna uma resposta
+Entity Framework Core		--> Classes de Domínio são mapeadas pelo ORM e assim são geradas as tabelas do banco de acordo
+microsoft.entityframeworkcore				--> Pacote do EFC
+microsoft.entityframeworkcore.sqlserver			--> Pacote para conexão entre EFC e SQLServer
+microsoft.entityframeworkcore.Tools			--> Pacote de Ferramentas do EFC
+microsoft.visualstudio.web.codegeneration.design	--> Pacote para Web do VStudio
+microsoft.aspnetcore.identity.entityframeworkcore	--> Pacote ASP NET Identidade
+class Classe : DBContext		--> Classe que representa uma sessao a com o Banco em tempo de execução
+DBSet<Classe> Tabela			--> Propriedade que mapeia uma tabela no banco com base em uma classe
+Data Source=localhost;Initial Catalog=LanchesMacDataBase;Integrated Security=True	--> String de Conexão na DB
+add-migration MigracaoInicial		--> No Console do NuGet, adiciona uma migração no projeto, criando a Tabela do DB
+Remove-Migration			--> Remove a migração criada
+[StringLength(250)]			--> DataAnnotation para mapear um campo como NVARCHAR(250)
+[Column(TypeName ="decimal(18,2)")] 	--> DataAnnotation para mapear o campo como DECIMAL de 2 casas
