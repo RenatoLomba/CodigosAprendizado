@@ -23,7 +23,7 @@ idade = int(input("Informe sua idade: "))		--> Faz um casting de tipo para int
 type(variavel)						--> Retorna o tipo da variavel (int, str, float, bool)
 verificar = True/False		--> Variavel tipo booleana
 #comentario			--> Coloca comentários na aplicação
-""comentario""				--> Comentários de multiplas linhas
+""comentario""			--> Comentários de multiplas linhas
 and	--> Operador lógico &&
 or	--> Operador lógico ||
 not	--> Operador lógico !
@@ -41,3 +41,36 @@ for n in range(10): 		--> Abre um loop onde n vai de 0 até 10
     print(n)
 for n in lista:			--> Loop que varre todos os indices de um array/lista
     print(n)
+def FUNÇÂO(PARAMETROS):		--> Definição de uma função
+    print("Função")
+FUNÇÂO(PARAMETROS)		--> Chamada da função
+
+arquivo = open(CAMINHODOARQUIVO, MODO)	--> Abrindo um arquivo, podendo ser armazenado em uma variavel
+	Modos:	r		--> Somente Leitura
+		w		--> Escrita (apaga e substitui os dados no arquivo)
+		r+		--> Leitura e escrita
+		w+		--> Escrita (substitui os dados no arquivo)
+		a		--> Escrita no final do arquivo
+		a+		--> Leitura e escrita (atualiza o arquivo)
+arquivo.readlines()		--> Lê e armazena cada linha em uma lista
+arquivo.read()			--> Lê o arquivo inteiro
+arquivo.write("TEXTO")		--> Escreve em um arquivo
+arquivo.close()			--> Fecha o arquivo após escrita ou leitura
+
+lista = ["Matthew", "Marisha"]	--> Cria uma lista
+lista = []			--> Crio uma lista em branco
+lista[0]			--> Indice da lista 0 é a primeira posição (Matthew)
+lista[1:]			--> Indice 1 em diante
+lista[2:4]			--> Indice 2 até o 4
+len(lista)			--> Retorna o tamanho da lista
+lista.append("Travis")		--> Adiciona um item ao final da lista
+if "Matthew" in lista:		--> Verifica se um item existe na lista
+    print("Existe")
+lista.sort()			--> Ordena uma lista
+lista_ordenada = sorted(lista)	--> Sorted retorna uma lista ordenada
+lista.sort(reverse=True)	--> Ordena a lista ao reverso
+dicionario = {"Renato" : "renatolomba.com"}	--> Cria um dicionario onde (chave : valor)
+print(dicionario["Renato"])	--> O valor printado será "renatolomba.com"
+for chave in dicionario:	--> Varrre um dicionario por suas chaves
+    print(dicionario[chave])
+del lista[1]			--> Remove o item na posição indicada
