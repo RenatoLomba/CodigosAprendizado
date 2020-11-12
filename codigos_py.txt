@@ -74,3 +74,17 @@ print(dicionario["Renato"])	--> O valor printado será "renatolomba.com"
 for chave in dicionario:	--> Varrre um dicionario por suas chaves
     print(dicionario[chave])
 del lista[1]			--> Remove o item na posição indicada
+import random			--> Biblioteca para numeros aleatórios
+random.randint(1, 100)		--> Retorna um numero inteiro de 1 até 100
+random.choice(listadenumeros)	--> Escolhe e retorna um numero que esta dentro de uma lista de numeros
+try:				--> Tratamento de exceções com try e exception
+    print(2/0)
+except:
+    print("Divisão por 0")
+finally:			--> Será executado sempre após o try/catch, independente se caiu na exceção ou não
+    print("Fim da execução")
+lista2 = [i for i in lista1]	--> List Comprehension, onde a lista2 receberá um valor i em cada iteração da lista1
+lista2 = [i for i in lista1 if i%2 == 0]	--> List Comprehension, onde a lista2 receberá o valor i em cada iteração da lista1 apenas se caso i for par (módulo de i igual a 0)
+for chave, valor in enumerate(lista)		--> Enumerate usado para retornar o conjuto par chave/valor de uma lista
+map(função, lista)				--> Função Map pega cada objeto de uma lista e aplica a função em cima dele
+zip(lista1, lista2)				--> concatena um cada valor da lista 1 com cada valor da lista 2
