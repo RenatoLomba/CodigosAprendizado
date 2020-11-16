@@ -33,3 +33,19 @@ switch ($opcao) {			--> Operador condicional switch
 }
 gettype($variavel)		--> Retorna o tipo da variável passada como parâmetro
 (double) $int			--> Realiza o casting de tipos
+function HelloWorld($parametros)--> Define uma função em PHP similar ao JavaScript
+
+Strings
+strtolower($texto)		--> Caracteres em minusculos
+strtoupper($texto)		--> Caracteres em maiusculos
+ucfirst($texto)			--> Primeiro caracter maiusculo
+strlen($texto)			--> Retorna a quantidade de caracteres
+str_replace("origem", "destino", $texto)	--> Substitui uma cadeia de caracteres por outra
+substr($texto, inicio(int), qtdcaracteres(int))	--> Retorna uma cadeia de caracteres a partir do indice passado e a quatidade de caracteres passado
+
+Math
+ceil($numero)			--> Arredonda para cima
+floor($numero)			--> Arredonda para baixo
+round($numero)			--> Arredonda com base nas casas decimais
+rand(min, max)			--> Retorna um numero aleatorio
+sqrt($numero)			--> Retorna a raíz quadrado do valor numérico
