@@ -34,6 +34,7 @@ switch ($opcao) {			--> Operador condicional switch
 gettype($variavel)		--> Retorna o tipo da variável passada como parâmetro
 (double) $int			--> Realiza o casting de tipos
 function HelloWorld($parametros)--> Define uma função em PHP similar ao JavaScript
+var_dump/print_r($lista)	--> Metodo para debug
 
 Strings
 strtolower($texto)		--> Caracteres em minusculos
@@ -49,3 +50,18 @@ floor($numero)			--> Arredonda para baixo
 round($numero)			--> Arredonda com base nas casas decimais
 rand(min, max)			--> Retorna um numero aleatorio
 sqrt($numero)			--> Retorna a raíz quadrado do valor numérico
+abs($negativo)			--> Transforma um numero negativo em positivo
+
+Date
+date('')			--> Retorna a Data atual, dia, mês, ano, horário etc como parâmetro
+$data = date('d/m/Y H:i:s');	--> Retorna dia/mês/ano hora:minuto:segundo
+date_default_timezone_get();	--> Retorna a timezone do seu PHP
+date_default_timezone_set('America/Sao_Paulo');	--> Modifica a timezone do PHP
+strtotime('YYYY-MM-DD')		--> Retorna a data passada em formato numérico, podendo ser calculada
+
+Arrays
+$lista = array('Item1', 'Item2')		--> Cria um array com parenteses
+$lista = ['Item1', 'Item2']			--> Cria um array com colchetes
+$lista[] = 'NovoValor'				--> Adiciona um novo valor no final do array
+$lista = array('id' => 01, 'nome' => 'Renato')	--> Cria um array com os indices associativos
+$lista['saldo'] = 450.99			--> Adiciona um novo item com o indice passado
