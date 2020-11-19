@@ -35,6 +35,8 @@ gettype($variavel)		--> Retorna o tipo da variável passada como parâmetro
 (double) $int			--> Realiza o casting de tipos
 function HelloWorld($parametros)--> Define uma função em PHP similar ao JavaScript
 var_dump/print_r($lista)	--> Metodo para debug
+is_null($var)			--> Verifica se o valor passado é null
+empty($var)			--> Verifica se o valor passsado está vazio
 
 Strings
 strtolower($texto)		--> Caracteres em minusculos
@@ -65,3 +67,5 @@ $lista = ['Item1', 'Item2']			--> Cria um array com colchetes
 $lista[] = 'NovoValor'				--> Adiciona um novo valor no final do array
 $lista = array('id' => 01, 'nome' => 'Renato')	--> Cria um array com os indices associativos
 $lista['saldo'] = 450.99			--> Adiciona um novo item com o indice passado
+in_array('valor', $lista)			--> Procura na lista se o valor existe, retornando true ou false
+array_search('valor', $lista)			--> Retorna o índice do valor pesquisado caso ele exista
