@@ -31,6 +31,8 @@ switch ($opcao) {			--> Operador condicional switch
 	//codigo
 	break
 }
+while($i <= 10) { $i++ }	--> Loop While
+do { $i++ } while($i <= 10)	--> Loop Do While
 gettype($variavel)		--> Retorna o tipo da variável passada como parâmetro
 (double) $int			--> Realiza o casting de tipos
 function HelloWorld($parametros)--> Define uma função em PHP similar ao JavaScript
@@ -69,3 +71,12 @@ $lista = array('id' => 01, 'nome' => 'Renato')	--> Cria um array com os indices 
 $lista['saldo'] = 450.99			--> Adiciona um novo item com o indice passado
 in_array('valor', $lista)			--> Procura na lista se o valor existe, retornando true ou false
 array_search('valor', $lista)			--> Retorna o índice do valor pesquisado caso ele exista
+is_array($lista)				--> Verifica se a variavel é de fato um array
+array_keys($lista)				--> Retorna os indices do array em um array
+sort($lista)					--> Ordena o array em ordem alfabetica não preservando os índices originais
+asort($lista)					--> Ordena o array em ordem alfabética preservando os índices originais
+count($lista)					--> Retorna a quantidade de elementos do array
+array_merge($lista, $lista2)			--> Funde um ou mais arrays em um só
+explode('/', $string)				--> Recupera elementos de uma string baseado no delimitador passado e retorna um array com cada elemento
+implode('/', $array)				--> Junta os elementos do array em uma string delimitando-os por / como passado por parametro
+array_push($lista, $elemento)			--> Adiciona um novo item no final do array
