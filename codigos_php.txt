@@ -80,7 +80,9 @@ array_merge($lista, $lista2)			--> Funde um ou mais arrays em um só
 explode('/', $string)				--> Recupera elementos de uma string baseado no delimitador passado e retorna um array com cada elemento
 implode('/', $array)				--> Junta os elementos do array em uma string delimitando-os por / como passado por parametro
 array_push($lista, $elemento)			--> Adiciona um novo item no final do array
+isset($lista['indice'])				--> Verifica se o indice passado existe no array atual
 
 Requisições
-$_GET		--> Variavel global que receberá os parametros da requisição GET em array
-$_POST		--> Variavel global que receberá os parametros da requisição POST em array
+$_GET				--> Variavel global que receberá os parametros da requisição GET em array
+$_POST				--> Variavel global que receberá os parametros da requisição POST em array
+header('Location: index.php')	--> Força o redirecionamento da página
