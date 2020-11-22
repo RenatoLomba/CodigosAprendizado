@@ -101,3 +101,22 @@ header('Location: index.php')	--> Força o redirecionamento da página
 session_start();		--> Inicio de uma SESSION, deve ficar antes de qualquer output de dados no navegador
 $_SESSION			--> Variavel global de seção, podendo ser utilizada por toda a aplicação no back end
 session_destroy();		--> Destrói a SESSION atual na instancia do browser, eliminando as variaveis de sessao criadas anteriormente
+
+Orientação a Objetos
+class Objeto {}			--> Cria uma classe modelo
+public $nome;			--> Atributo da classe
+$objeto = new Objeto()		--> Instanciar um objeto
+$objeto->nome			--> Acesso um atributo do objeto
+$objeto->Metodo()		--> Acesso um metodo do objeto
+$this->nome			--> Acessar o atibuto ou metodo da classe na propria classe
+---------------------------------
+public function __set($atributo, $valor) {
+    $this->$atributo = $valor;
+}
+$objeto->__set('nome', 'Renato')--> Função padrão para Set de valores, passando o atributo a ser modificado e o valor a ser atribuido
+---------------------------------
+public function __get($atributo) {
+    return $this->$atributo
+}
+$objeto->__get('nome')		--> Função padrão para Get de valores, passando o atributo a ser recuperado
+---------------------------------
