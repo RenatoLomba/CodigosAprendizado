@@ -39,6 +39,14 @@ function HelloWorld($parametros)--> Define uma função em PHP similar ao JavaSc
 var_dump/print_r($lista)	--> Metodo para debug
 is_null($var)			--> Verifica se o valor passado é null
 empty($var)			--> Verifica se o valor passsado está vazio
+$arquivo = fopen('arquivo.txt', 'a')	--> Abre ou cria um arquivo, passando o nome e o metodo
+feof($arquivo)			--> Percorre o arquivo até o fim de suas linhas, retornando true quando encontrar o final
+fgets($arquivo)			--> Retorna a linha atual do arquivo
+fwrite($arquivo, $string)	--> Escreve no arquivo
+fclose($arquivo)		--> Fecha o arquivo
+
+include("menu.php")		--> Inclui um script de uma página php em outra, nesse caso inclui um menu.php em todas as páginas que tiverem esta função
+require("menu.php")		--> Mesma função do include, porem caso a função não encontre o script passado, gera uma exceção, interrompendo o resto do script
 
 Strings
 strtolower($texto)		--> Caracteres em minusculos
@@ -81,8 +89,13 @@ explode('/', $string)				--> Recupera elementos de uma string baseado no delimit
 implode('/', $array)				--> Junta os elementos do array em uma string delimitando-os por / como passado por parametro
 array_push($lista, $elemento)			--> Adiciona um novo item no final do array
 isset($lista['indice'])				--> Verifica se o indice passado existe no array atual
+unset($lista['indice'])				--> Remove um indice especifico de um array
+$lista = array_filter($lista)			--> Remove um índice sem valor (nulo)
 
 Requisições
 $_GET				--> Variavel global que receberá os parametros da requisição GET em array
 $_POST				--> Variavel global que receberá os parametros da requisição POST em array
 header('Location: index.php')	--> Força o redirecionamento da página
+session_start();		--> Inicio de uma SESSION, deve ficar antes de qualquer output de dados no navegador
+$_SESSION			--> Variavel global de seção, podendo ser utilizada por toda a aplicação no back end
+session_destroy();		--> Destrói a SESSION atual na instancia do browser, eliminando as variaveis de sessao criadas anteriormente
