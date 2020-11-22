@@ -33,6 +33,8 @@ switch ($opcao) {			--> Operador condicional switch
 }
 while($i <= 10) { $i++ }	--> Loop While
 do { $i++ } while($i <= 10)	--> Loop Do While
+continue			--> Pula uma interação do laço sem quebrar o laço
+break				--> Quebra o laço
 gettype($variavel)		--> Retorna o tipo da variável passada como parâmetro
 (double) $int			--> Realiza o casting de tipos
 function HelloWorld($parametros)--> Define uma função em PHP similar ao JavaScript
