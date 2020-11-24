@@ -120,3 +120,6 @@ public function __get($atributo) {
 }
 $objeto->__get('nome')		--> Função padrão para Get de valores, passando o atributo a ser recuperado
 ---------------------------------
+function __construct($parametro)--> Função construtora (Instancia)
+function __destruct()		--> Função destrutora (Remoção)
+class Objeto extends Modelo	--> Herança em PHP
