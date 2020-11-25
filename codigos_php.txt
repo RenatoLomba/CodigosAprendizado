@@ -123,3 +123,14 @@ $objeto->__get('nome')		--> Função padrão para Get de valores, passando o atr
 function __construct($parametro)--> Função construtora (Instancia)
 function __destruct()		--> Função destrutora (Remoção)
 class Objeto extends Modelo	--> Herança em PHP
+public				--> Público para todos
+private				--> Privado, somente a classe pode acessar
+protected			--> Somente os filhos podem acessar
+get_class_methods($objeto)	--> Retorna os metodos publicos do objeto
+get_class_vars('Classe')	--> Retorna os atributos publicos da classe
+static				--> Atributos e métodos estáticos só podem ser acessados internamente, não fazem parte da instância do objeto
+Classe::atributo		--> Acessa um atributo ou metodo estático de uma classe
+abstract			--> Classe abstrata não pode ser instanciada
+interface Interface		--> Interface assina metodos que deverão ser implementados obrigatoriamente pelas classes assinantes
+Classe implements Interface	--> Classe implementa uma interface, portanto deverá conter a implementação de seus metodos
+implements Interface, Interface2--> Implementar mais de uma interface na Classe
