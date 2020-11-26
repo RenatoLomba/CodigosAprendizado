@@ -13,7 +13,19 @@ microsoft.aspnetcore.identity.entityframeworkcore	--> Pacote ASP NET Identidade
 class Classe : DBContext		--> Classe que representa uma sessao a com o Banco em tempo de execução
 DBSet<Classe> Tabela			--> Propriedade que mapeia uma tabela no banco com base em uma classe
 Data Source=localhost;Initial Catalog=LanchesMacDataBase;Integrated Security=True	--> String de Conexão na DB
-add-migration MigracaoInicial		--> No Console do NuGet, adiciona uma migração no projeto, criando a Tabela do DB
-Remove-Migration			--> Remove a migração criada
 [StringLength(250)]			--> DataAnnotation para mapear um campo como NVARCHAR(250)
 [Column(TypeName ="decimal(18,2)")] 	--> DataAnnotation para mapear o campo como DECIMAL de 2 casas
+add-migration MigracaoInicial		--> No Console do NuGet, adiciona uma migração no projeto, criando a Tabela do DB
+remove-migration			--> Remove a migração criada
+update-database				--> Cria efetivamente o banco com as tabelas e campos criados
+add-migration PopularTabelas		--> Cria uma migração para popular as tabelas
+migrationsBuilder.Sql("COMANDO SQL")	--> Comando para comunicação com o SQL (INSERT, UPDATE, DELETE, SELECT...)
+update-database				--> Executa os comandos SQL passados no migrationsBuilder do metodo Up
+Repository				--> Design Pattern que visa adicionar uma camada na aplicação responsavel pela comunicaocao
+com o banco de dados
+IExemploRepository			--> Interface que conterá os metodos de acesso ao banco (INSERT, UPDATE, DELETE, SELECT)
+ClasseRepository			--> Classe que implementará os metodos
+IEnumerable<Tipo>			--> Objeto numeravel de um tipo
+Include(c => c.Tabela)			--> Select com Join de outra tabela
+Where(p => p.Atributo)			--> Filtro Where da consulta
+FirstOrDefault(l => l.Atributo == valor)--> Retorna o primeiro objeto com a clausula passada ou default
