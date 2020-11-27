@@ -35,3 +35,4 @@ ViewData['Chave'] = 'Valor'		--> Semelhante ao ViewBag, poderá ser utilizado na 
 @foreach (var item in Model)		--> Faço um foreach percorrendo os objetos do modelo passado
 Model					--> Acessa o modelo da página
 wwwroot					--> Diretório público da aplicação, podendo ser acessado de fora
+preco.ToString("c")			--> Retorna um valor modificado como a moeda local
