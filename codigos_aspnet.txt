@@ -29,3 +29,9 @@ IEnumerable<Tipo>			--> Objeto numeravel de um tipo
 Include(c => c.Tabela)			--> Select com Join de outra tabela
 Where(p => p.Atributo)			--> Filtro Where da consulta
 FirstOrDefault(l => l.Atributo == valor)--> Retorna o primeiro objeto com a clausula passada ou default
+ViewBag.Valor = 'Qualquer valor'	--> Informações guardadas no ViewBag do controller podem ser acessadas na View
+ViewData['Chave'] = 'Valor'		--> Semelhante ao ViewBag, poderá ser utilizado na View
+@model IEnumerable<ViewModel>		--> Indica o modelo de dados a ser exibido na View
+@foreach (var item in Model)		--> Faço um foreach percorrendo os objetos do modelo passado
+Model					--> Acessa o modelo da página
+wwwroot					--> Diretório público da aplicação, podendo ser acessado de fora
