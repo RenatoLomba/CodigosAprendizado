@@ -46,6 +46,7 @@ feof($arquivo)			--> Percorre o arquivo até o fim de suas linhas, retornando tr
 fgets($arquivo)			--> Retorna a linha atual do arquivo
 fwrite($arquivo, $string)	--> Escreve no arquivo
 fclose($arquivo)		--> Fecha o arquivo
+file_exists('arquivo.php')	--> Verifica se um arquivo existe na pasta atual
 
 include("menu.php")		--> Inclui um script de uma página php em outra, nesse caso inclui um menu.php em todas as páginas que tiverem esta função
 require("menu.php")		--> Mesma função do include, porem caso a função não encontre o script passado, gera uma exceção, interrompendo o resto do script
@@ -134,3 +135,12 @@ abstract			--> Classe abstrata não pode ser instanciada
 interface Interface		--> Interface assina metodos que deverão ser implementados obrigatoriamente pelas classes assinantes
 Classe implements Interface	--> Classe implementa uma interface, portanto deverá conter a implementação de seus metodos
 implements Interface, Interface2--> Implementar mais de uma interface na Classe
+namespace			--> Utilizado para separar classes com o mesmo nome
+$obj = new \Namespace\Objeto	--> Para referenciar uma classe de um determinado namespace, basta utilizar desta forma com o \ e o nome do namespace e \
+use Namespace\Classe;		--> Referencio uma classe de um namespace que existe em outro arquivo que deve ter sido referenciado pelo require
+use Name\Classe as Classe2;	--> Referencio uma classe com um alias (apelido)
+try {}				--> Tente
+catch(Exception/Error $erro)	--> Pegue
+finally {}			--> Finalmente
+throw new Exception/Error("Erro com o banco")	--> Lance uma Exception com o título passado
+class TesteException extends Exception		--> Cria uma Exception customizada
