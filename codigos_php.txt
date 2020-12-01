@@ -47,6 +47,7 @@ fgets($arquivo)			--> Retorna a linha atual do arquivo
 fwrite($arquivo, $string)	--> Escreve no arquivo
 fclose($arquivo)		--> Fecha o arquivo
 file_exists('arquivo.php')	--> Verifica se um arquivo existe na pasta atual
+die()				--> Mata o processamento do script atual da aplicação, desconsiderando quaisquer outros codigos adiante
 
 include("menu.php")		--> Inclui um script de uma página php em outra, nesse caso inclui um menu.php em todas as páginas que tiverem esta função
 require("menu.php")		--> Mesma função do include, porem caso a função não encontre o script passado, gera uma exceção, interrompendo o resto do script
