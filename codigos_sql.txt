@@ -5,18 +5,12 @@ SQL - Linguagem de Consulta Estruturada
     Comandos: CREATE, ALTER, DROP, TRUNCATE e RENAME
   - DML (Lingaugem de Manipulação de Dados)
     Comandos: INSERT, UPDATE e DELETE
-    SELECT (Consulta)
   - DCL (Linguagem de Controle de Dados)
     Comandos: GRANT e REVOKE
   - DTL (Linguagem de Transações de Dados)
     Comandos: BEGIN, COMMIT e ROLLBACK
-
-- CHAR: para entradas de texto com comprimento fixo, como por exemplo, siglas de estados, CEP e números de CPF.
-- VARCHAR: para entradas de texto com comprimento variável, como Nome Completo, descrições de produtos.
-- DATE/TIME: para entradas contendo valor de data e hora.
-- FLOAT: para entradas que irão receber dados numéricos com precisão flutuante, como cálculo de taxas de juros e cálculos científicos.
-- BOOLEAN: para entradas que irão receber um valor verdadeiro ou falso
-- INTEGER: para entradas que irão receber dados numéricos inteiros.
+  - DQL (Linguagem de Consulta de Dados)
+    Comandos: SELECT
 
 -Primary Key: Chave primária (Numérica, NÃO NULA e sem duplicatas)
 -Foreign Key: Chave estrangeira (Primary key de outra entidade que se relaciona com esta)
@@ -26,24 +20,41 @@ SQL - Linguagem de Consulta Estruturada
 	CREATE TABLE NOMEDATABELA	--> Cria uma estrutura
 	(
     		RA INT PRIMARY KEY AUTO_INCREMENT,
-    		NOME VARCHAR(50),
-    		EMAIL VARCHAR(50),
-    		DATA_NASCIMENTO DATE, (YYYY/MM/DD)
-    		ENDERECO VARCHAR(100),
-    		CEP CHAR(8),
-    		TELEFONE VARCHAR(15),
-    		CIDADE VARCHAR(50),
-    		ESTADO CHAR(2),
-    		ATIVO BOOLEAN
+    		NOME VARCHAR(50) NOT NULL,
+    		EMAIL VARCHAR(50) NOT NULL,
+    		DATA_NASCIMENTO DATE NOT NULL, (YYYY/MM/DD)
+    		ENDERECO VARCHAR(100) NULL,
+    		CEP CHAR(8) NOT NULL,
+    		TELEFONE VARCHAR(15) NULL,
+    		CIDADE VARCHAR(50) NULL,
+    		ESTADO CHAR(2) NULL,
+		SALDO FLOAT(7,2) DEFAULT 0,
+    		ATIVO BOOLEAN DEFAULT TRUE
 	);
 	PRIMARY KEY			--> Indica a chave primária
 	AUTO_INCREMENT			--> Indica que é sequencial
 	DROP TABLE NOMEDATABELA;	--> Deleta uma estrutura
 	PRIMARY KEY (CODIGO_CURSO, CODIGO_ALUNO)	--> Indica que na estrutura há 2 chaves primarias de relacionamento em uma entidade associativa
 	CONSTRAINT fk_entidadeassociativa_tabela FOREIGN KEY (CHAVEESTRANGEIRA) REFERENCES NOMEDARABELA (CHAVEPRIMARIANATABELARELACIONADA)	--> Crio um relacionamento entre uma entidade e uma entidade associativa
+	NULL: Campo que pode ser nulo na linha da tabela
+	NOT NULL: Campo é obrigatório na inserção da linha da tabela
+
+	CHAR (0-255): para entradas de texto com comprimento fixo, como por exemplo, siglas de estados, CEP e números de CPF.
+	VARCHAR (0-255): para entradas de texto com comprimento variável, como Nome Completo, descrições de produtos.
+	TEXT: para tamanho variável que armazena um número grande de caracteres
+
+	DATE/TIME: para entradas contendo valor de data e hora.
+	DATETIME: combinação de data e hora
+
+	INT: para entradas que irão receber dados numéricos inteiros.
+	FLOAT(5,2): para entradas que irão receber dados numéricos com precisão flutuante, como cálculo de taxas de juros e cálculos científicos (5 DIGITOS, 2 NUMEROS DEPOIS DA VIRGULA)
+	BOOLEAN: para entradas que irão receber um valor verdadeiro ou falso
+
 	ALTER TABLE NOMEDATABELA ADD ELEMENTO	--> Altera a tabela após criada, adicionando algum elemento ou regra
 	ALTER TABLE NOMEDATABELA DROP ELEMENTO	--> Remove um elemento da tabela
 	ALTER TABLE NOMEDATABELA MODIFY ELEMENT	--> Modifica um elemento da tabela
+	ALTER TABLE TABELA NODIFY COLUMN COLUNA TIPO ATRIBUTOS --> Modifica uma coluna da tabela
+	RENAME TABLE BANCO.NOMEDATABELA TO BANCO.NOVONOMEDATABELA --> Modifica o nome da tabela
 
 	INSERT INTO NOMEDATABELA (COLUNA1, COLUNA2...) VALUES (VALOR1, VALOR2...)	--> Insere dados em uma tabela
 	INSERT INTO TABELA (ID_AUTO_INCREMENT, COL2...) VALUES (null, VALOR2...)	--> Quando o campo tiver a propriedade AUTO_INCREMENT em sua criação, o valor deve ser nulo que ele irá se auto incrementar sozinho
