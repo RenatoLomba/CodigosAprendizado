@@ -36,3 +36,21 @@ ViewData['Chave'] = 'Valor'		--> Semelhante ao ViewBag, poderá ser utilizado na 
 Model					--> Acessa o modelo da página
 wwwroot					--> Diretório público da aplicação, podendo ser acessado de fora
 preco.ToString("c")			--> Retorna um valor modificado como a moeda local
+_ViewStart				--> Arquivo que define a página que contem o Layout principal do site
+_Layout					--> Página do Layout principal do site
+_ViewImports				--> Página que contém os imports de scripts que serão usados por todas as Views
+ViewModel				--> Model que é utilizado apenas para Visualização dos Dados, não sendo recomendado
+passar dados da ViewModel para o Banco de Dados, apenas pelo Model de domínio
+@await Html.PartialAsync("_PartialView")		--> Renderiza uma Partial View, que é uma Semi View que pode ser usada por diversas Views
+dentro da aplicação
+@await Html.PartialAsync("_PartialView", modelo)	--> Renderiza uma Partial View que terá os dados do Model passado junto no Html Helper
+porem os dados alterados na Partial View não são recuperados na View Pai
+<partial name="_PartialLanchesResumo" for="@lanche" />	--> Novo meio de se renderizar uma Partial View no Asp Net Core 3.0
+Session					--> Armazena dados de requisições do usuário durante a sessão atual através de cookies,
+uma Session expira após 20 minutos ou quando o usuário fecha o navegador
+Session.Clear()				--> Mata a Sessão atual do usuário
+const string SessionKeyNome = "_Nome"	--> Define uma constante que vai criar uma chave para armazenar um valor da Session
+HttpContext.Session.SetString(SessionKeyNome, "Renato")	--> Atribui um valor do usuário a chave constante criada
+var nome = context.Session.GetString(SessionKeyNome)	--> Recupera um valor contido na chave da Session passada
+Guid					--> Representa um identificador unico global
+Guid.NewGuid().ToString()		--> Gera um novo Guid Único
