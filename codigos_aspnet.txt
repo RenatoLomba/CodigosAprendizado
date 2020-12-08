@@ -7,6 +7,15 @@ dotnet new sln --name NovaSolucao		--> Cria uma solução em .Net
 dotnet new console -n Programa -o programa	--> Cria um projeto do console em .Net, com a saída em programa
 dotnet sln add programa				--> Adiciona o projeto a uma solução
 dotnet run					--> Roda o arquivo .csproj do .Net
+dotnet restore					--> Restaura os pacotes .Net
+dotnet build					--> Compila a solução .Net
+dotnet clean					--> Limpa os pacotes .Net
+
+Metodos HTTP:
+GET	--> Recuperar dados
+POST	--> Adicionar dados
+PUT	--> Atualizar dados
+DELETE	--> Deletar dados
 
 Projeto:
 Model		--> Responsável por manter os dados e lógica de negócio da aplicação (Back-end)
