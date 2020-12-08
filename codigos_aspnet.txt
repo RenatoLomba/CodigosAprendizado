@@ -1,5 +1,14 @@
 ASP.NET MVC
 
+Linha de Comando:
+dotnet --version				--> Mostra versoes do .Net
+dotnet new					--> Abre as possiblidades de projetos em C# .Net
+dotnet new sln --name NovaSolucao		--> Cria uma solução em .Net
+dotnet new console -n Programa -o programa	--> Cria um projeto do console em .Net, com a saída em programa
+dotnet sln add programa				--> Adiciona o projeto a uma solução
+dotnet run					--> Roda o arquivo .csproj do .Net
+
+Projeto:
 Model		--> Responsável por manter os dados e lógica de negócio da aplicação (Back-end)
 View		--> É a interface com o usuário da app que exibe os dados (Front-end)
 Controller	--> Recebe e trata as requisições e renderiza a view apropriada com os dados (Front to Back/Back to Front)
