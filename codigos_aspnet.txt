@@ -1,16 +1,19 @@
 ASP.NET MVC
 
 Linha de Comando:
-dotnet --version				--> Mostra versoes do .Net
-dotnet new					--> Abre as possiblidades de projetos em C# .Net
-dotnet new sln --name NovaSolucao		--> Cria uma solução em .Net
-dotnet new console -n Programa -o programa	--> Cria um projeto do console em .Net, com a saída em programa
-dotnew new webapi -n aplication -n Aplication	--> Cria uma Web API em .Net
-dotnet sln add programa				--> Adiciona o projeto a uma solução
-dotnet run					--> Roda o arquivo .csproj do .Net
-dotnet restore					--> Restaura os pacotes .Net
-dotnet build					--> Compila a solução .Net
-dotnet clean					--> Limpa os pacotes .Net
+dotnet --version					--> Mostra versoes do .Net
+dotnet new						--> Abre as possiblidades de projetos em C# .Net
+dotnet new sln --name NovaSolucao			--> Cria uma solução em .Net
+dotnet new console -n Programa -o programa		--> Cria um projeto do console em .Net, com a saída em programa
+dotnet new webapi -n aplication -n API.Aplication	--> Cria uma Web API em .Net
+dotnet new classlib -n Domain -o Api.Domain -f netcoreapp3.1	--> Cria uma library de Class Domain
+dotnet sln add programa					--> Adiciona o projeto a uma solução
+dotnet run						--> Roda o arquivo .csproj do .Net
+dotnet restore						--> Restaura os pacotes .Net
+dotnet build						--> Compila a solução .Net
+dotnet clean						--> Limpa os pacotes .Net
+dotnet tool install --global dotnet-ef			--> Instala a Ferramenta do EntityFramework
+dotnet add .\API.Data\ reference .\API.Domain\		--> Adiciona uma referencia de Domain em Data, pois as camadas Infra e Domain se conversam
 
 Metodos HTTP:
 GET	--> Recuperar dados
@@ -19,6 +22,21 @@ PUT	--> Atualizar dados
 DELETE	--> Deletar dados
 
 Projeto:
+Domain		--> Camada que conterá as Entidades da Aplicação
+Entity		--> Representação em Classe de uma Tabela do Banco de Dados
+Guid		--> Tipo que representa um identificador único global
+DateTime.UtcNow	--> Retorna a hora atual configurada no servidor
+public abstract class BaseEntity	--> Entidade base onde todas as Entidades herdarão seus atributos
+public class UserEntity : BaseEntity	--> Entidade herdando as propriedades de BaseEntity
+
+Data		--> Camada responsável pelo EntityFrameworkCore
+EntityFrameworkCoreSqlServer	--> Pacote EntityFramework para SQLServer
+PomeloEntityFrameworkCoreMySQL	--> Pacote EntityFramework para MySQL
+EntityFrameworkCoreTools	--> Pacote de Ferramentas do EntityFramework
+EntityFrameworkCoreDesign	--> Pacote de Design do EntityFramework
+Context : DbContext		--> Classe que irá relacionar as Entidades de Dominio com o EntityFramework
+DbSet<Entity> Entidades		--> Propriedade que referencia a Entidade Entity
+
 Model		--> Responsável por manter os dados e lógica de negócio da aplicação (Back-end)
 View		--> É a interface com o usuário da app que exibe os dados (Front-end)
 Controller	--> Recebe e trata as requisições e renderiza a view apropriada com os dados (Front to Back/Back to Front)
