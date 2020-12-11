@@ -14,6 +14,7 @@ dotnet build						--> Compila a solução .Net
 dotnet clean						--> Limpa os pacotes .Net
 dotnet tool install --global dotnet-ef			--> Instala a Ferramenta do EntityFramework
 dotnet add .\API.Data\ reference .\API.Domain\		--> Adiciona uma referencia de Domain em Data, pois as camadas Infra e Domain se conversam
+dotnet ef migrations add EntityMigration		--> Adiciona uma migração com o EntityFramework
 
 Metodos HTTP:
 GET	--> Recuperar dados
@@ -28,6 +29,8 @@ Guid		--> Tipo que representa um identificador único global
 DateTime.UtcNow	--> Retorna a hora atual configurada no servidor
 public abstract class BaseEntity	--> Entidade base onde todas as Entidades herdarão seus atributos
 public class UserEntity : BaseEntity	--> Entidade herdando as propriedades de BaseEntity
+dotnet ef database update		--> Realiza as alterações com base na Migração criada
+public interface IRepository<T> where T : BaseEntity	--> Cria um Repositório genérico que aceitara qualquer Entidade que herde de BaseEntity
 
 Data		--> Camada responsável pelo EntityFrameworkCore
 EntityFrameworkCoreSqlServer	--> Pacote EntityFramework para SQLServer
@@ -36,6 +39,20 @@ EntityFrameworkCoreTools	--> Pacote de Ferramentas do EntityFramework
 EntityFrameworkCoreDesign	--> Pacote de Design do EntityFramework
 Context : DbContext		--> Classe que irá relacionar as Entidades de Dominio com o EntityFramework
 DbSet<Entity> Entidades		--> Propriedade que referencia a Entidade Entity
+ContextFactory			--> Classe que realizará a migração com o banco em tempo de execução
+EntityMap			--> Classe de mapeamento da Entidade Entity
+Migration			--> Usada para definição e alteração de tabelas no banco
+
+Service		--> Camada responsável pelas regras de negócio, e que fará a ligação da Application com a Infra (usuário com o banco)
+
+Application			--> Camada com os controladores da aplicação, onde o usuário acessará diretamente através das requisições HTTP
+Controller			--> Controlador da aplicação, onde são feitas todas as requisições Http
+[Route("api/[controller]")]	--> Indica que aquele é um controller de API
+[ApiController]
+http://localhost:5000/api/users	--> Acessa a api no controlador users
+[HttpGet]			--> Indica que o metodo é GET
+BadRequest			--> Código 400 - Sintaxe Inválida
+Ok				--> Código 200 - Requisição bem-sucedida
 
 Model		--> Responsável por manter os dados e lógica de negócio da aplicação (Back-end)
 View		--> É a interface com o usuário da app que exibe os dados (Front-end)
