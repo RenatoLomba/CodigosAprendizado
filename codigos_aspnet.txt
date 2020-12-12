@@ -15,6 +15,7 @@ dotnet clean						--> Limpa os pacotes .Net
 dotnet tool install --global dotnet-ef			--> Instala a Ferramenta do EntityFramework
 dotnet add .\API.Data\ reference .\API.Domain\		--> Adiciona uma referencia de Domain em Data, pois as camadas Infra e Domain se conversam
 dotnet ef migrations add EntityMigration		--> Adiciona uma migração com o EntityFramework
+dotnet add package AutoMapper.Extensions.Microsoft.DependencyInjection --version 8.1.0	--> Configura a Injeção de Dependencia AutoMapper na CrossCutting
 
 Metodos HTTP:
 GET	--> Recuperar dados
@@ -52,7 +53,16 @@ Controller			--> Controlador da aplicação, onde são feitas todas as requisições 
 http://localhost:5000/api/users	--> Acessa a api no controlador users
 [HttpGet]			--> Indica que o metodo é GET
 BadRequest			--> Código 400 - Sintaxe Inválida
+NotFound			--> Código 404 - Não Encontrado
 Ok				--> Código 200 - Requisição bem-sucedida
+Created				--> Código 201 - Objeto criado com sucesso
+[Route("{id}", Name = "GetById")]		--> Configura o parâmetro do método e o Nome dele na Rota
+http://localhost:5000/api/users/GetById/123abc	--> Acessa o metodo na api passando o id 123abc
+[HttpDelete("{id}")]		--> Espera um parâmetro na rota do endereço
+
+
+CrossCutting			--> Camada de Configuração das Injeções de Dependência de Serviços
+StartUp				--> Classe onde terá a configuração das Injeções de Dependencias criadas na CrossCutting
 
 Model		--> Responsável por manter os dados e lógica de negócio da aplicação (Back-end)
 View		--> É a interface com o usuário da app que exibe os dados (Front-end)
