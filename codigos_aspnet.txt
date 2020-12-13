@@ -32,6 +32,9 @@ public abstract class BaseEntity	--> Entidade base onde todas as Entidades herda
 public class UserEntity : BaseEntity	--> Entidade herdando as propriedades de BaseEntity
 dotnet ef database update		--> Realiza as alterações com base na Migração criada
 public interface IRepository<T> where T : BaseEntity	--> Cria um Repositório genérico que aceitara qualquer Entidade que herde de BaseEntity
+[Required]		--> Campo da classe é obrigatório
+[EmailAddress]		--> Campo deverá receber um email válido
+[StringLength(100)]	--> Campo com no máximo 100 caracteres
 
 Data		--> Camada responsável pelo EntityFrameworkCore
 EntityFrameworkCoreSqlServer	--> Pacote EntityFramework para SQLServer
