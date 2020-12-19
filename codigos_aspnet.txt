@@ -35,6 +35,7 @@ public interface IRepository<T> where T : BaseEntity	--> Cria um Repositório gen
 [Required]		--> Campo da classe é obrigatório
 [EmailAddress]		--> Campo deverá receber um email válido
 [StringLength(100)]	--> Campo com no máximo 100 caracteres
+FluentValidation	--> Biblioteca que auxilia na validação de classes
 
 Data		--> Camada responsável pelo EntityFrameworkCore
 EntityFrameworkCoreSqlServer	--> Pacote EntityFramework para SQLServer
@@ -62,6 +63,8 @@ Created				--> Código 201 - Objeto criado com sucesso
 [Route("{id}", Name = "GetById")]		--> Configura o parâmetro do método e o Nome dele na Rota
 http://localhost:5000/api/users/GetById/123abc	--> Acessa o metodo na api passando o id 123abc
 [HttpDelete("{id}")]		--> Espera um parâmetro na rota do endereço
+[Authorize("Bearer")]		--> Requere autorização "Bearer" (Jwt)
+[AllowAnonymous]		--> Não requere autorização
 
 
 CrossCutting			--> Camada de Configuração das Injeções de Dependência de Serviços
