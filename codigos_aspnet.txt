@@ -36,6 +36,7 @@ public interface IRepository<T> where T : BaseEntity	--> Cria um Repositório gen
 [EmailAddress]		--> Campo deverá receber um email válido
 [StringLength(100)]	--> Campo com no máximo 100 caracteres
 FluentValidation	--> Biblioteca que auxilia na validação de classes
+Mapper.map<Origem, Destino>()	--> Realiza o mapeamento de classes
 
 Data		--> Camada responsável pelo EntityFrameworkCore
 EntityFrameworkCoreSqlServer	--> Pacote EntityFramework para SQLServer
