@@ -125,3 +125,5 @@ HttpContext.Session.SetString(SessionKeyNome, "Renato")	--> Atribui um valor do 
 var nome = context.Session.GetString(SessionKeyNome)	--> Recupera um valor contido na chave da Session passada
 Guid					--> Representa um identificador unico global
 Guid.NewGuid().ToString()		--> Gera um novo Guid Único
+$"Teste{codigo}"			--> Concatena o texto em aspas com o que estiver dentro de chaves
+String.Format("Teste{0}{1}", cod1, cod2)--> Concatena o texto com os parametros passados
