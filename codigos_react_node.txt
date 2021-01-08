@@ -1,0 +1,23 @@
+NPM
+
+npm -version			--> Versão do NPM
+npx create-react-app exemploapp	--> Cria um app React
+npm start			--> Inicia um projeto React na pasta inicial do projeto
+
+React
+
+import React from 'react'				--> Importa a biblioteca React
+import ReactDOM from 'react-dom'			--> Importa o ReactDOM, para iniciar exibição na tela
+import './index.css'					--> Importa um arquivo que esta na mesma pasta
+const rootElement = document.getElementById('root')	--> Recupera o elemento root da index.html
+ReactDOM.render('Hello World!!!', rootElement)		--> Renderiza a string dentro do elemento passado
+ReactDOM.render(<h1>Olá<h1>, rootElement)		--> Renderiza o elemento html dentro do elemento root
+const tag = <h1>Olá<h1>					--> Tag html dentro de uma constante ou variavel
+ReactDOM.render({ tag }, rootElement)			--> Renderiza a constante passada dentro de chaves
+export default function Exemplo() {}			--> Exporta um componente
+import Exemplo from './components/basicos/Exemplo'	--> Importa o componente Exemplo
+ReactDOM.render(<Exemplo></Exemplo>, rootElement)	--> Utiliza o componente Exemplo
+export default function Exemplo(props) {}		--> Componente que recebe parâmetros dentro de um objeto
+<Exemplo parametro={"Este é um parâmetro"></Exemplo>}	--> Chama o componente passando os parâmetros a ele
+<><Componente></Componente></>				--> React fragments necessários para encapsular Componentes e Tags JSX
+							
