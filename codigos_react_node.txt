@@ -20,4 +20,10 @@ ReactDOM.render(<Exemplo></Exemplo>, rootElement)	--> Utiliza o componente Exemp
 export default function Exemplo(props) {}		--> Componente que recebe parâmetros dentro de um objeto
 <Exemplo parametro={"Este é um parâmetro"></Exemplo>}	--> Chama o componente passando os parâmetros a ele
 <><Componente></Componente></>				--> React fragments necessários para encapsular Componentes e Tags JSX
-							
+<div className="NomeClasse"></div>			--> Utiliza uma classe CSS em React
+{props.children}					--> Recupera os Elementos filhos que estão dentro do Componente
+style={backgroundColor: props.color}			--> Passa uma propriedade como parametro pro estilo CSS
+React.cloneElement(Componente, { propriedades, })	--> Clona um Componente passando propriedades para o mesmo
+React.Children.map(props.children, (child) => { return something })	--> Para cada um dos filhos, retorna alguma coisa (semelhante ao forEach)
+lista.map((item) => { return <li>{item}</li> })		--> Mapeia um array de Js para um array de objetos JSX com elementos e componentes
+
