@@ -26,4 +26,8 @@ style={backgroundColor: props.color}			--> Passa uma propriedade como parametro 
 React.cloneElement(Componente, { propriedades, })	--> Clona um Componente passando propriedades para o mesmo
 React.Children.map(props.children, (child) => { return something })	--> Para cada um dos filhos, retorna alguma coisa (semelhante ao forEach)
 lista.map((item) => { return <li>{item}</li> })		--> Mapeia um array de Js para um array de objetos JSX com elementos e componentes
-
+import React, {useState} from 'react'			--> Importa a hook useState para utilizar estados
+const [nome, setNome] = useState('Estado Inicial')	--> Define um estado inicial para uma const nome e uma função que irá alterar seu valor futuramente setNome
+<input value={valor} onChange={(e) => setValor(e.target.value)} />	--> Input controlado, seu valor só é alterado por uma função callback que modifique seu estado
+<input value={valor} readOnly />			--> Input com valor somente leitura, não pode ser alterado pelo usuário
+<input value={undefined} />				--> Input não controlado, seu valor pode ser qualquer coisa, não tem ligação com nada
