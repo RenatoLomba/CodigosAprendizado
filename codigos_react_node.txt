@@ -3,6 +3,7 @@ NPM
 npm -version			--> Versão do NPM
 npx create-react-app exemploapp	--> Cria um app React
 npm start			--> Inicia um projeto React na pasta inicial do projeto
+npm i react-router-dom		--> Instala o pacote Router para navegacao
 
 React
 
@@ -33,3 +34,18 @@ const [nome, setNome] = useState('Estado Inicial')	--> Define um estado inicial 
 <input value={undefined} />				--> Input não controlado, seu valor pode ser qualquer coisa, não tem ligação com nada
 this.setState({ key: valor })				--> Atualiza o valor na chave passada
 this.setState({ key })					--> Atualiza o estado do componente com o mesmo nome do objeto passado
+
+Navegação com Router
+import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom'	--> Importa o Router
+<Router>Conteudo, Componentes, etc</Router>		--> Todo o conteúdo da página deve ficar dentro da tag Router
+<Switch><Route></Rout></Switch>				--> Switch verifica as Routes que ele escolherá para renderizar
+<Route path="/" exact={true} component={Home} />	--> Configura um componente Home como sendo rota padrão (path="/")
+<Route path="/about" component={About} />		--> Configura uma rota para o componente About
+<Link to="/about">About</Link>				--> Componente Link que renderiza o componente da rota passada
+<Route path="/about/:id" component={About} />		--> :id Significa que a Rota recebe parâmetros na chamada
+<Link to="/about/123">About</Link>			--> Chama a rota about/ passando o parametro 123 que é o :id
+import { useParams } from 'react-router-dom'		--> Importa o Hook para usar parametros da URL no Componente
+const { id } = useParams()				--> Passa o parâmetro Id passado na URL para um objeto id
+<Route path="*" component={NoMatch}			--> A ultima rota passada na configuração do Switch será uma rota Fallback, onde caso a página não seja encontrada, cairá nessa rota
+const location = useLocation()				--> Hook do Router utilizada para pegar a url da pagina
+{location.pathname}					--> Retorna o caminho da pagina
