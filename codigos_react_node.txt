@@ -49,3 +49,12 @@ const { id } = useParams()				--> Passa o parâmetro Id passado na URL para um ob
 <Route path="*" component={NoMatch}			--> A ultima rota passada na configuração do Switch será uma rota Fallback, onde caso a página não seja encontrada, cairá nessa rota
 const location = useLocation()				--> Hook do Router utilizada para pegar a url da pagina
 {location.pathname}					--> Retorna o caminho da pagina
+
+Hooks
+const [valor, setValor] = useState(valorInicial)	--> Cria um estado no componente funcional
+onClick={() => setValor(novoValor)}			--> Usa uma função para alterar o estado do componente
+/** OBS **/	--> SEMPRE QUE UM ESTADO DO COMPONENTE É ALTERA, O COMPONENTE É RENDERIZADO NOVAMENTE
+onClick={() => setValor(valor + 1)}			--> Adiciona +1 ao valor
+onClick={() => setValor(current => current + 1000)}	--> Current é o valor atual, que pode ser trabalhado
+<input type="text" className="input" value={name} />	--> Vincula o valor de um estado ao input
+useEffect(() => ação, [valor])				--> Sempre que o valor passado em [] for modificado, executa este Efeito
