@@ -34,6 +34,7 @@ const [nome, setNome] = useState('Estado Inicial')	--> Define um estado inicial 
 <input value={undefined} />				--> Input não controlado, seu valor pode ser qualquer coisa, não tem ligação com nada
 this.setState({ key: valor })				--> Atualiza o valor na chave passada
 this.setState({ key })					--> Atualiza o estado do componente com o mesmo nome do objeto passado
+string.join('-')					--> Junta cada elemento de um array em uma string separada pelo valor passado
 
 Navegação com Router
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom'	--> Importa o Router
@@ -53,8 +54,23 @@ const location = useLocation()				--> Hook do Router utilizada para pegar a url 
 Hooks
 const [valor, setValor] = useState(valorInicial)	--> Cria um estado no componente funcional
 onClick={() => setValor(novoValor)}			--> Usa uma função para alterar o estado do componente
+const [objeto, setObjeto] = useState({objeto})		--> Passo um objeto para o estado
+setObjeto({ ...objeto, atributo: atributoNovo })	--> Altero um atributo do objeto sem prejudicar os outros
 /** OBS **/	--> SEMPRE QUE UM ESTADO DO COMPONENTE É ALTERA, O COMPONENTE É RENDERIZADO NOVAMENTE
 onClick={() => setValor(valor + 1)}			--> Adiciona +1 ao valor
 onClick={() => setValor(current => current + 1000)}	--> Current é o valor atual, que pode ser trabalhado
 <input type="text" className="input" value={name} />	--> Vincula o valor de um estado ao input
 useEffect(() => ação, [valor])				--> Sempre que o valor passado em [] for modificado, executa este Efeito
+const count = useRef(0)					--> Ref cria uma referencia de objeto que não é re-renderizado quando seu estado é afetado, diferente de useState
+const result = useMemo(() => soma(n1, n2), [n1, n2])	--> Retorna um valor memorizado, e a função só será chamada quando uma das dependencias for atualizada
+useCallback((val) => {setCount(current => current + val)}, [setCount])	--> Função armazenada em memório, que será renderiza uma única vez pois nunca muda
+export default React.memo(Componente)			--> Memo indica que o componente pode ser armazenado em cash e não precisa ser renderizado várias vezes
+const [state, dispatch] = useReducer(reducer, initialState)	--> Reducer, outra forma de controlar componentes, recebe uma função para modificar os dados e um estado inicial
+
+Context API
+export const dados = { num: 123, text: "API Context" }
+const DataContext = React.createContext(dados)		--> Crio um contexto que receberá dados que serão utilizados por vários componentes
+export default DataContext
+import DataContext, { dados }
+<DataContext.Provider value={dados}><App /></DataContext.Provider> --> Envolve toda a aplicação no contexto
+const contexto = useContext(DataContext)		--> Retorna os dados passados para o Contexto, podendo ser acessado de qualquer local da aplicação
