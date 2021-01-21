@@ -4,6 +4,20 @@ npm -version			--> Versão do NPM
 npx create-react-app exemploapp	--> Cria um app React
 npm start			--> Inicia um projeto React na pasta inicial do projeto
 npm i react-router-dom		--> Instala o pacote Router para navegacao
+npm i styled-components		--> Pacote de Componentes estilizados
+npx create-react-native-app app	--> Cria um app React-Native
+npm run android/ios/web		--> Roda o app em uma das opcoes a seguir (Android, IOS, Web)
+npm i @react-navigation/native	--> Navigation entre telas
+npm i @react-navigation/stack
+npm i @react-navigation/bottom-tabs		--> Abas inferiores
+npm i @react-native-community/async-storage	--> API Async
+npm i @react-native-community/geolocation	--> Geolocalizacao
+npm i react-native-permissions			--> Permissoes de usuario
+npm i react-native-swiper			--> Swipe de tela
+npm i react-native-svg				--> Trabalhar com icones SVG
+npm i react-native-svg-transformer
+npm i expo					--> Instala o Expo
+npm i expo-cli --global
 
 React
 
@@ -74,3 +88,9 @@ export default DataContext
 import DataContext, { dados }
 <DataContext.Provider value={dados}><App /></DataContext.Provider> --> Envolve toda a aplicação no contexto
 const contexto = useContext(DataContext)		--> Retorna os dados passados para o Contexto, podendo ser acessado de qualquer local da aplicação
+
+React Native
+import 'react-native-gesture-handler'			--> Biblioteca para gestos
+<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />	--> Em andoid/src/main/AndroidManifest.xml (necessario para usar geolocalização)
+import { NavigationContainer } from '@react-navigation/native'	--> Biblioteca do React Navigation
+<NavigationContainer></>				--> Container principal que ficarão as Stacks
