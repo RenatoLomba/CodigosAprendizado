@@ -94,3 +94,15 @@ import 'react-native-gesture-handler'			--> Biblioteca para gestos
 <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />	--> Em andoid/src/main/AndroidManifest.xml (necessario para usar geolocalização)
 import { NavigationContainer } from '@react-navigation/native'	--> Biblioteca do React Navigation
 <NavigationContainer></>				--> Container principal que ficarão as Stacks
+
+Next Js
+
+npx create-next-app --example with-styled-components	--> Criar aplicação em Next Js
+npm run dev						--> Roda a aplicação
+import Head from 'next/head'				--> Componente da Header do html
+npm install eslint --dev				--> Instala o Eslint, ferramenta para padronização de código do JavaScript
+eslint --init						--> Roda as configuracoes do Eslint
+eslint --fix						--> Ajusta o código
+e.preventDeafult()					--> Prevém que a página seja recarregada no submit do form
+const router = useRouter(); router.push('/page')	--> Roteamento que manda para outra pagina
+router.push('/page?name=Renato')			--> Passando parâmetros na URL
