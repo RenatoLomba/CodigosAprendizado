@@ -18,6 +18,7 @@ npm i react-native-svg				--> Trabalhar com icones SVG
 npm i react-native-svg-transformer
 npm i expo					--> Instala o Expo
 npm i expo-cli --global
+npm i framer-motion		--> Biblioteca para animações do React/Next
 
 React
 
@@ -103,6 +104,14 @@ import Head from 'next/head'				--> Componente da Header do html
 npm install eslint --dev				--> Instala o Eslint, ferramenta para padronização de código do JavaScript
 eslint --init						--> Roda as configuracoes do Eslint
 eslint --fix						--> Ajusta o código
-e.preventDeafult()					--> Prevém que a página seja recarregada no submit do form
+e.preventDefault()					--> Prevém que a página seja recarregada no submit do form
 const router = useRouter(); router.push('/page')	--> Roteamento que manda para outra pagina
 router.push('/page?name=Renato')			--> Passando parâmetros na URL
+{...props} => <Input {...props} />			--> Qualquer parâmetro passado para o Componente será inserido automaticamente no elemento com o operador spread
+npm install prop-types					--> Instala tipagem de propriedades para JavaScript
+import PropTypes from 'prop-types'
+Componente.PropTypes = {				--> Tipagem de propriedades em JavaScript para um componente React (props)
+    onClick: PropTypes.func.isRequired,			--> Evento onClick (Função, Obrigatório)
+    value: PropTypes.string.isRequired,			--> Propriedade value (string, Obrigatório)
+    width: PropTypes.number.isRequired,			--> Propriedade width (int/float, Obrigatório)
+}							--> Entre outros tipos que podem ser passados
